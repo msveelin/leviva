@@ -1,9 +1,9 @@
 <template>
   <main class="intro  bg-black text-white">
-    <div class="p-4">
+    <div class="p-4 fixed top-0 w-full">
       <landing-nav></landing-nav>
     </div>
-    <div class="h-96 flex justify-center items-center">
+    <div class="intro-main pt-10 flex justify-center items-center">
       <div class="items-center flex flex-col justify-center">
         <h1 class="text-6xl mb-2 homemade drop-shadow-xl">Welcome to the Safaris</h1>
         <button class="intro-btn mt-3"><span>Book Now</span></button>
@@ -102,6 +102,9 @@ import LandingNav from '@/components/shared/LandingNav.vue';
   background-repeat: no-repeat;
 }
 
+.intro-main {
+  height: 80vh;
+}
 .tarangire {
   background-image: url("../assets/images/tarangire.jpg");
   background-size: cover;

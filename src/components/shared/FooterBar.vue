@@ -11,7 +11,8 @@
             <div class="w-1/2 ml-3">
                 <h2 class="font-bold text-xl">Contacts:</h2>
                 <div class="ml-3 flex flex-col">
-                    <p></p>
+                    <p>+255 758 996 047</p>
+                    <p>+255 759 428 834</p>
                     <a href="https://www.instagram.com/levivatravelandtours/">Instagram</a>
                     <a href="mailto: info@levivainvestments.co.tz">Email</a>
                 </div>
