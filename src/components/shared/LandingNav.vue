@@ -1,0 +1,40 @@
+<template>
+    <div class="p-1 px-3 glass flex justify-between items-center rounded-md">
+        <router-link to="/">
+            <img :src="logo" alt="" class="h-20 w-20 hover:scale-105 cursor-pointer">
+        </router-link>
+        <div>
+            <a href="#" class="mr-3 menu__link">Flights</a>
+            <a href="#" class="mr-3 menu__link">Safaris</a>
+            <a href="/about" class="menu__link">About</a>
+        </div>
+    </div>
+</template>
+<script setup>
+import logo from "@/assets/logo.svg";
+</script>
+
+<style scoped>
+.menu__link {
+    color: #fff;
+    line-height: 2;
+    position: relative;
+}
+
+.menu__link::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -.25rem;
+    left: 50%;
+    transition: width .4s, left .4s;
+}
+
+.menu__link:hover::before {
+    width: 100%;
+    left: 0;
+}
+</style>
