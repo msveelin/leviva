@@ -1,6 +1,6 @@
-# leviva
+# Leviva Travel and Tours
 
-This template should help get you started developing with Vue 3 in Vite.
+Embark on a journey like no other with Leviva Travel and Tours. Immerse yourself in the heart of untamed landscapes, where the call of the wild beckons and every moment is an exploration into the extraordinary. Our travel safaris are meticulously crafted to deliver an unforgettable experience, blending luxury with the thrill of the wilderness.
 
 ## Recommended IDE Setup
 
