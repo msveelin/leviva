@@ -12,16 +12,33 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-body{
+body {
   background-color: black;
   color: white;
   font-family: 'Raleway', sans-serif;
 }
 
-.homemade{
+.homemade {
   font-family: 'Homemade Apple', cursive;
 }
 
-.gloria{
+.gloria {
   font-family: 'Gloria Hallelujah', cursive;
+}
+
+.bg-primary{
+  background-color: #ffa732;
+}
+
+.menu-btn {
+  background: #ffa732;
+  color: #fff;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.menu-btn:hover {
+  background-color: black;
+  color: white;
 }

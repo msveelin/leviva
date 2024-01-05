@@ -149,18 +149,7 @@ import LandingNav from '@/components/shared/LandingNav.vue';
   background-blend-mode: overlay;
 }
 
-.menu-btn {
-  background: #ffa732;
-  color: #fff;
-  margin-top: 10px;
-  padding: 5px;
-  border-radius: 5px;
-}
 
-.menu-btn:hover {
-  background-color: #4f2d00;
-  color: white;
-}
 
 .intro-btn {
   padding: 0.1em 0.25em;

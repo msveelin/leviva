@@ -5,9 +5,9 @@
         </router-link>
         <div class="flex items-center">
             <a href="/flights" class="mr-3 menu__link">Flights</a>
-            <a href="#" class="mr-3 menu__link">Safaris</a>
+            <a href="/safaris" class="mr-3 menu__link">Safaris</a>
             <a href="/about" class="mr-3 menu__link">About</a>
-            <a href="https://api.whatsapp.com/send?phone=255758996047" class="p-2 px-3 rounded-md" style="background-color: #ffa732;">CHAT ON WHATSAPP</a>
+            <a href="https://api.whatsapp.com/send?phone=255758996047" class="p-2 px-3 bg-primary rounded-md hover:bg-black cursor-pointer">CHAT ON WHATSAPP</a>
         </div>
     </div>
 </template>
