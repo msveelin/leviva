@@ -46,7 +46,7 @@
                 <div class="p-1 rounded-md bg-black serengeti h-96 flex flex-col justify-end">
                     <div class="p-2  mt-1">
                         <h1 class="text-xl font-bold mb-1">Day Safaris</h1>
-                        <button class="menu-btn w-full  "><span>VIEW MORE</span></button>
+                        <button class="menu-btn w-full  "><router-link to="day-safaris">VIEW MORE</router-link></button>
                     </div>
                 </div>
                 <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">

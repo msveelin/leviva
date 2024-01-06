@@ -19,7 +19,7 @@
     </div>
 
     <div class="mt-4 grid grid-cols-4 gap-4">
-      <div class="p-1 rounded-md bg-black tarangire h-96 flex flex-col justify-end">
+      <div class="p-1 rounded-md bg-black tarangire h-96 flex flex-col justify-end" style=" background-image: url('../assets/images/tarangire.jpg');">
         <div class="p-2 mt-1">
           <h1 class="text-xl font-bold mb-1">Tarangire National Park</h1>
           <button class="menu-btn w-full  "><span>VIEW MORE</span></button>

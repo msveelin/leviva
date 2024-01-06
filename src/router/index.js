@@ -26,6 +26,14 @@ const router = createRouter({
       component: () => import('../views/FlightsView.vue')
     },
     {
+      path: '/book-now',
+      name: 'booknow',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/BookingForm.vue')
+    },
+    {
       path: '/safaris',
       name: 'safaris',
       // route level code-splitting
@@ -35,11 +43,43 @@ const router = createRouter({
     },
     {
       path: '/balloon-safaris',
-      name: '/balloon-safaris',
+      name: 'balloon-safaris',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('@/views/safaris/balloon/BalloonSafari.vue')
+    },
+    {
+      path: '/arusha-day-safari',
+      name: 'arushadaysafari',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('@/views/safaris/daysafaris/ArushaDaySafari.vue')
+    },
+    {
+      path: '/chemka-day-safari',
+      name: 'chemkadaysafari',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('@/views/safaris/daysafaris/ChemkaDaySafari.vue')
+    },
+    {
+      path: '/tarangire-day-safari',
+      name: 'tarangiredaysafari',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('@/views/safaris/daysafaris/TarangireDaySafari.vue')
+    },
+    {
+      path: '/day-safaris',
+      name: 'daysafaris',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('@/views/safaris/daysafaris/DaySafari.vue')
     },
   ]
 })
