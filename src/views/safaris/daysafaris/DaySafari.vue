@@ -6,12 +6,12 @@
             </div>
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center flex flex-col p-10 justify-center">
-                    <h1 class="text-5xl text-center mb-2 drop-shadow-xl homemade"> Where Nature's Beauty Takes Center Stage
+                    <h1 class="lg:text-5xl text-4xl text-center mb-2 drop-shadow-xl homemade"> Where Nature's Beauty Takes Center Stage
                     </h1>
                 </div>
             </div>
         </div>
-        <div class="p-10">
+        <div class="p-10 text-justify">
             <p>Embark on an unforgettable journey into the heart of the wild with our exclusive day safaris. Picture this:
                 as the golden sun stretches its rays over the vast landscapes, you find yourself immersed in a canvas
                 painted by Mother Nature herself. </p>
@@ -19,7 +19,7 @@
                 extraordinary day. Feel the crisp morning air as you venture into the park, where every turn unveils a new
                 chapter in the untold stories of the African savannah.</p>
 
-            <div class="mt-5 p-2 grid grid-cols-4 gap-6">
+            <div class="mt-5 p-2 grid-cols-1 grid lg:grid-cols-4 gap-6">
                 <div class="p-1 rounded-md bg-black arusha h-96 flex flex-col justify-end">
                     <div class="p-2  mt-1">
                         <h1 class="text-xl font-bold mb-1">Arusha National Park</h1>

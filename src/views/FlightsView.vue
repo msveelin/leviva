@@ -4,14 +4,14 @@
             <div class="p-4">
                 <landing-nav></landing-nav>
             </div>
-            <div class="intro-main flex justify-center items-center">
-                <div class="items-center flex flex-col justify-center">
-                    <h1 class="text-7xl mb-2 drop-shadow-xl homemade">Conquer the skies with us</h1>
+            <div class="intro-main p-5 flex justify-center items-center">
+                <div class="items-center flex text-center flex-col justify-center">
+                    <h1 class="text-7xl mb-2  drop-shadow-xl homemade">Conquer the skies with us</h1>
                     <p class="text-3xl mt-2 drop-shadow-xl">Book a flight to anywhere in the world</p>
                 </div>
             </div>
         </div>
-        <div class="p-10">
+        <div class="lg:p-10 p-5 text-justify">
             <h1 class="gloria text-5xl text-center mb-3">Your gateway to seamless travel</h1>
             <div class="p-10">
                 <p>Welcome to Leviva Travel and Tours, your go-to destination for hassle-free air travel. With our

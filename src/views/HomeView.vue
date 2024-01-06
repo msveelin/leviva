@@ -1,12 +1,12 @@
 <template>
-  <main class="intro  bg-black text-white">
+  <main class="intro   bg-black text-white">
     <div class="p-4 fixed top-0 w-full">
       <landing-nav></landing-nav>
     </div>
-    <div class="intro-main pt-10 flex justify-center items-center">
+    <div class="intro-main px-5  pt-10 flex justify-center items-center">
       <div class="items-center flex flex-col justify-center">
-        <h1 class="text-6xl mb-2 homemade drop-shadow-xl">Welcome to the Safaris</h1>
-        <button class="intro-btn mt-3"><span>Book Now</span></button>
+        <h1 class="lg:text-6xl text-center mb-2 text-4xl homemade drop-shadow-xl">Welcome to the Safaris</h1>
+        <button class="intro-btn mt-3"><span><a href="/book-now">Book Now</a></span></button>
       </div>
     </div>
 
@@ -18,29 +18,29 @@
         Popular Destinations</h1>
     </div>
 
-    <div class="mt-4 grid grid-cols-4 gap-4">
-      <div class="p-1 rounded-md bg-black tarangire h-96 flex flex-col justify-end" style=" background-image: url('../assets/images/tarangire.jpg');">
+    <div class="mt-4 grid grid-cols-1 lg:grid-cols-4 gap-4">
+      <div class="p-1 rounded-md bg-black tarangire h-96 flex flex-col justify-end" >
         <div class="p-2 mt-1">
           <h1 class="text-xl font-bold mb-1">Tarangire National Park</h1>
-          <button class="menu-btn w-full  "><span>VIEW MORE</span></button>
+          <button class="menu-btn w-full  "><router-link to="/tarangire">VIEW MORE</router-link></button>
         </div>
       </div>
       <div class="p-1 rounded-md bg-black serengeti h-96 flex flex-col justify-end">
         <div class="p-2  mt-1">
           <h1 class="text-xl font-bold mb-1">Serengeti National Park</h1>
-          <button class="menu-btn w-full  "><span>VIEW MORE</span></button>
+          <button class="menu-btn w-full  "><router-link to="/serengeti">VIEW MORE</router-link></button>
         </div>
       </div>
       <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">
         <div class="p-2  mt-1">
           <h1 class="text-xl font-bold mb-1">Ngorongoro Conservation Area</h1>
-          <button class="menu-btn w-full   "><span>VIEW MORE</span></button>
+          <button class="menu-btn w-full   "><router-link to="/ngorongoro">VIEW MORE</router-link></button>
         </div>
       </div>
       <div class="p-1 rounded-md bg-black arusha h-96 flex flex-col justify-end">
         <div class="p-2  mt-1">
           <h1 class="text-xl font-bold mb-1">Arusha National Park</h1>
-          <button class="menu-btn w-full "><span>VIEW MORE</span></button>
+          <button class="menu-btn w-full "><router-link to="/arusha">VIEW MORE</router-link></button>
         </div>
       </div>
     </div>
@@ -51,12 +51,12 @@
       <h1 class="text-center gloria text-4xl flex items-center mb-2">
         The Adventure of a Lifetime with Leviva</h1>
     </div>
-    <div class="p-10 text-justify mt-3">
+    <div class="lg:p-10 p-5 text-justify mt-3">
       <p>Embark on a journey like no other with Leviva Travel and Tours. Immerse yourself in the heart of untamed
         landscapes, where the call of the wild beckons and every moment is an exploration into the extraordinary. Our
         travel safaris are meticulously crafted to deliver an unforgettable experience, blending luxury with the thrill of
         the wilderness.</p>
-      <div class="grid grid-cols-2 gap-6 mt-6 p-3">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 p-3">
         <p>🌍 <b> Discover the Wild Wonders:</b>
           Step into the realm of majestic beasts and breathtaking landscapes. Our carefully curated safaris take you to
           the most iconic wildlife destinations, from the sweeping plains of the Serengeti to the enticing beauty of the

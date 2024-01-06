@@ -34,6 +34,14 @@ const router = createRouter({
       component: () => import('../views/BookingForm.vue')
     },
     {
+      path: '/thank-you',
+      name: 'thankyou',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/ThankYou.vue')
+    },
+    {
       path: '/safaris',
       name: 'safaris',
       // route level code-splitting
@@ -80,6 +88,26 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('@/views/safaris/daysafaris/DaySafari.vue')
+    },
+    {
+      path:'/tarangire',
+      name: 'tarangire',
+      component: () => import('@/views/TarangireNationalPark.vue')
+    },
+    {
+      path:'/arusha',
+      name: 'arusha',
+      component: () => import('@/views/ArushaNationalPark.vue')
+    },
+    {
+      path:'/serengeti',
+      name: 'serengeti',
+      component: () => import('@/views/SerengetiNationalPark.vue')
+    },
+    {
+      path:'/ngorongoro',
+      name: 'ngorongoro',
+      component: () => import('@/views/NgorongoroConservationArea.vue')
     },
   ]
 })

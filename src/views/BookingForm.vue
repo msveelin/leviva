@@ -7,11 +7,42 @@
             <div class="intro-main pt-10 flex justify-center items-center">
                 <div class="items-center flex flex-col justify-center">
                     <h1 class="text-6xl mb-2 homemade drop-shadow-xl">Book a Trip / Flight</h1>
-                    
+
                 </div>
             </div>
 
         </main>
+        <div class="mt-5 flex flex-col justify-center items-center w-full p-10">
+            <form @submit.prevent="submitForm" class="w-2/3 flex flex-col">
+                <label for="name">Name:</label>
+                <input v-model="formData.name" type="text" id="name" name="name" required>
+
+                <br>
+
+                <label for="email">Email:</label>
+                <input v-model="formData.email_id" type="email" id="email" name="email_id" required>
+
+                <br>
+                <label for="tour">Select Safari Tour:</label>
+                <select class="p-2 text-black rounded-xl mt-2 outline-none" id="tour" name="destination"
+                    v-model="formData.destination" required>
+                    <option value="Arusha National Park Day Safari">Arusha National Park Day Safari</option>
+                    <option value="Tarangire National Park Dy Safari">Tarangire National Park Dy Safari</option>
+                    <option value="Chemka Hot Spring Day Safari">Chemka Hot Spring Day Safari</option>
+                    <option value="Balloon Safari">Balloon Safari</option>
+                </select>
+                <br>
+                <label for="participants">Number of Participants:</label>
+                <input type="number" v-model="formData.participants" id="participants" name="participants" min="1" required>
+                <br>
+
+                <label for="date">Tour Date:</label>
+                <input type="date" v-model="formData.date" id="date" name="date" required>
+
+
+                <button class="bg-orange-400 hover:bg-white mt-3 hover:text-black p-2" type="submit">Book Now</button>
+            </form>
+        </div>
         <div>
             <footer-bar></footer-bar>
         </div>
@@ -20,6 +51,53 @@
 <script setup>
 import FooterBar from '@/components/shared/FooterBar.vue';
 import LandingNav from '@/components/shared/LandingNav.vue';
+import emailjs from '@emailjs/browser';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+
+emailjs.init('6sG6eYDndzcj1QsJP')
+
+const formData = ref({
+    name: '',
+    email_id: '',
+    destination: '',
+    participants: null,
+    date: ''
+})
+
+const submitForm = async () => {
+    try {
+        // Send booking confirmation email
+        const bookingResponse = await emailjs.send(
+            'service_vjyw5ti',  // Replace with your Email.js Service ID
+            'template_dqrqwbg',  // Replace with your Booking Confirmation Template ID
+            formData.value
+        );
+
+        console.log('Booking confirmation email sent:', bookingResponse);
+
+        // Send auto-reply email
+        const autoReplyResponse = await emailjs.send(
+            'service_vjyw5ti',  // Replace with your Email.js Service ID
+            'template_dqrqwbg',  // Replace with your Auto-Reply Template ID
+            {
+                to_email: formData.value.email_id,
+                // Add other variables needed for the auto-reply template
+            }
+        );
+
+        console.log('Auto-reply email sent:', autoReplyResponse);
+
+         // Redirect to a thank-you page
+        router.push('/thank-you');
+
+    } catch (error) {
+        console.error('Error sending emails:', error);
+    }
+
+}
 </script>
 <style scoped>
 .intro {
@@ -32,5 +110,12 @@ import LandingNav from '@/components/shared/LandingNav.vue';
 
 .intro-main {
     height: 80vh;
+}
+
+input {
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
 }
 </style>

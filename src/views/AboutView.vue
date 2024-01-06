@@ -5,12 +5,12 @@
         <landing-nav></landing-nav>
       </div>
       <div class="h-96 flex justify-center items-center">
-        <div class="items-center flex flex-col justify-center">
-          <h1 class="text-7xl mb-2 drop-shadow-xl homemade">Where the sunsets are golden</h1>
+        <div class="items-center flex p-5 text-center flex-col justify-center">
+          <h1 class="lg:text-7xl mb-2 text-4xl drop-shadow-xl homemade">Where the sunsets are golden</h1>
         </div>
       </div>
     </main>
-    <div class="p-10 text-justify">
+    <div class="lg:p-10 p-5 text-justify">
       <h1 class="gloria text-5xl text-center mb-3">Our Story</h1>
       <p class="p-10 mb-2">At Leviva Travel and Tours, we believe in transforming dreams into unparalleled travel
         experiences. Established
@@ -34,7 +34,7 @@
           the perfect itinerary tailored to your desires.</p>
       </div>
       <h1 class="gloria text-5xl text-center mb-3">Our Services</h1>
-      <div class="p-10 grid grid-cols-2 gap-6">
+      <div class="p-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
         <p>🛫 <b>Air Ticketing:</b>
           Navigate the skies effortlessly with our comprehensive air ticketing services. From securing the best fares to
           managing your travel preferences, we are dedicated to making your journey as smooth as possible.</p>

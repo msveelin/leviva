@@ -5,19 +5,19 @@
                 <landing-nav></landing-nav>
             </div>
             <div class="intro-main flex justify-center items-center">
-                <div class="items-center flex flex-col justify-center">
-                    <h1 class="text-7xl mb-2 drop-shadow-xl homemade">Safari dreams come true.</h1>
+                <div class="items-center text-center p-5 flex flex-col justify-center">
+                    <h1 class="lg:text-7xl text-4xl mb-2 drop-shadow-xl homemade">Safari dreams come true.</h1>
                 </div>
             </div>
         </div>
-        <div class="p-10">
+        <div class="p-10 text-justify">
             <h1 class="gloria text-3xl text-center mb-3">Unleash the Adventure: Discover Extraordinary Safaris</h1>
             <div class="p-3">
                 <p>Welcome to the wild side of travel with Leviva's Safari Experiences. Immerse yourself in the heart of
                     nature, where every sunrise brings a new spectacle and every sunset paints the savannah in warm hues.
                     Our carefully curated safari adventures promise an awe-inspiring journey into the world's most iconic
                     landscapes, teeming with majestic wildlife.</p>
-                <div class="grid grid-cols-2 mt-4 gap-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 mt-4 gap-6">
                     <p>🌍<b> Unparalleled Expertise:</b>
                         Embark on a journey guided by experts passionate about wildlife and the great outdoors. Our seasoned
                         guides are your companions in exploration, sharing their extensive knowledge of each destination,
@@ -36,7 +36,7 @@
             </div>
 
             <h1 class="gloria text-3xl text-center mt-3 mb-3">Explore Our Safari Packages</h1>
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 <div class="p-1 rounded-md bg-black balloon h-96 flex flex-col justify-end">
                     <div class="p-2 mt-1 w-full">
                         <h1 class="text-xl font-bold mb-1">Balloon Safaris</h1>
@@ -49,7 +49,7 @@
                         <button class="menu-btn w-full  "><router-link to="day-safaris">VIEW MORE</router-link></button>
                     </div>
                 </div>
-                <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">
+                <!-- <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">
                     <div class="p-2  mt-1">
                         <h1 class="text-xl font-bold mb-1">2-day Safaris</h1>
                         <button class="menu-btn w-full   "><span>VIEW MORE</span></button>
@@ -60,7 +60,7 @@
                         <h1 class="text-xl font-bold mb-1">3-day Safaris</h1>
                         <button class="menu-btn w-full "><span>VIEW MORE</span></button>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <h1 class="gloria text-3xl text-center mt-7 mb-3">What to wear on a safari</h1>

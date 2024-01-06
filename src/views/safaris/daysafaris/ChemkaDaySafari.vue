@@ -11,9 +11,9 @@
                 </div>
             </div>
         </div>
-        <div class="p-10 flex">
+        <div class="p-10 flex flex-col lg:flex-row text-justify">
 
-            <div class="w-2/3 p-3">
+            <div class="lg:w-2/3 w-full p-3">
                 <p>Welcome to a rejuvenating adventure with our Chemka Hot Springs Day Safari, a journey that combines the
                     thrill of
                     exploration with the serenity of natural hot springs. Nestled in the heart of Tanzania, Chemka Hot
@@ -43,16 +43,27 @@
                 <p>Bid farewell to Chemka Hot Springs as you embark on your journey back to Arusha. Reflect on the day's
                     experiences and enjoy the changing colors of the sky as the sun sets over the Tanzanian landscape.</p>
             </div>
-            <div class="w-1/3 p-3">
+            <div class="lg:w-1/3 w-full p-3">
                 <div class="border border-white p-2">
                     <h2 class="font-bold mb-2">Price:</h2>
-                    <h2 class="font-bold mb-2">Price Inclusion:</h2>
                     <ul class="ml-3 list-disc">
                         <li>1pax: US $90 pp</li>
                         <li>2pax: US $60 pp</li>
                         <li>3pax: US $55 pp</li>
                         <li>4-7pax: US $45 pp</li>
                     </ul>
+                    <ul class="ml-3 mb-3 list-disc">
+                        <li>Private transport from your accommodation to the Hot Springs and back, English speaking
+                            driver</li>
+                        <li>Entrance fee to the Hot Springs</li>
+                        <li>Picnic lunch at the Hot Springs</li>
+                        <li>Drinks</li>
+                    </ul>
+                    <p class="mb-2">The recommended amount for a driver is around 15 USD per day if you’re
+                        satisfied, to be divided by all your group members. Thank you! </p>
+                    <button class="bg-primary w-full p-2">
+                        <router-link to="book-now">BOOK NOW</router-link>
+                    </button>
                 </div>
             </div>
         </div>
