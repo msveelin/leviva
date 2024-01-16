@@ -1,16 +1,16 @@
 <template>
+    <landing-nav></landing-nav>
     <div>
         <div class="intro">
-            <div class="p-4">
-                <landing-nav></landing-nav>
-            </div>
+
+
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center p-5 text-center flex flex-col justify-center">
                     <h1 class="text-4xl lg:text-7xl mb-2 drop-shadow-xl homemade">Soar through the skies.</h1>
                 </div>
             </div>
         </div>
-        <div class="lg:p-20 p-10 text-justify text-white">
+        <div class="lg:p-20 p-10 text-justify bg-white text-black">
             <h1 class="mt-4 gloria primary text-center text-3xl mb-3">Experience the Unseen</h1>
             <p>Embark on a whimsical journey as you soar through the skies on a majestic balloon safari. Feel the gentle
                 breeze caress your face as your colorful balloon gracefully ascends, offering a panoramic canvas of nature's
@@ -38,7 +38,7 @@
                 <p class="mt-3">After breakfast, you receive your Serengeti Balloon certificate and later meet up with your
                     safari driver at approximately 09:45 ready to continue your day’s activities.</p>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-5 mb-5">
+                <div class="grid  grid-cols-1 lg:grid-cols-2 gap-6 mt-5 mb-5">
                     <div>
                         <h1 class="gloria primary text-xl mb-2">Seasons:</h1>
                         <ul class="list-disc">
@@ -79,7 +79,7 @@
 
                     </div>
                 </div>
-                <div class="mt-5 grid grid-cols-1 lg:grid-cols-4 gap-4">
+                <div class="mt-5 text-white grid grid-cols-1 lg:grid-cols-4 gap-4">
                     <div class="p-1 rounded-md bg-black balloon-serengeti h-96 flex flex-col justify-end">
                         <div class="p-2 mt-1 w-full">
                             <h1 class="text-xl font-bold mb-1">Serengeti</h1>

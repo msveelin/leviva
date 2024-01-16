@@ -1,49 +1,77 @@
 <template>
+    <landing-nav></landing-nav>
     <div>
         <div class="intro">
-            <div class="p-4">
-                <landing-nav></landing-nav>
-            </div>
+
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center flex flex-col p-10 justify-center">
-                    <h1 class="text-5xl text-center mb-2 drop-shadow-xl homemade"> Ngorongoro Conservation Area
+                    <h1 class="text-5xl text-center mb-2 drop-shadow-xl homemade"> Ngorongoro Conservation Area Day Trip
                     </h1>
                 </div>
             </div>
         </div>
-        <div class="p-10">
-            <p>Tanzania's Ngorongoro Crater, often referred to as the "Eighth Wonder of the World," is a geological marvel
-                and a haven for wildlife enthusiasts. Nestled within the Ngorongoro Conservation Area, this ancient caldera
-                offers a unique and immersive safari experience, showcasing a thriving ecosystem within its walls.</p>
-            <h2 class="font-bold mt-3 mb-2">The Cradle of Life:</h2>
-            <p class="mt-2">Ngorongoro Crater is a massive volcanic caldera, formed millions of years ago. Today, it is a
-                natural amphitheater, spanning over 260 square kilometers and harboring a remarkably high concentration of
-                wildlife. The crater's floor is a lush paradise, providing a fertile habitat for a diverse array of flora
-                and fauna.</p>
-            <h2 class="font-bold mt-3 mb-2">Wildlife Abundance:</h2>
-            <p class="mt-2">
-                The crater is home to an astonishing variety of wildlife, earning it the nickname "Noah's Ark of Africa."
-                Encounter the iconic "Big Five" – lions, elephants, buffalos, leopards, and rhinoceros – as well as a
-                multitude of other species such as hippos, zebras, wildebeests, and countless bird species. The compact
-                nature of the crater ensures that game drives are filled with constant wildlife sightings.
-            </p>
-            <h2 class="font-bold mt-3 mb-2">Spectacular Landscapes:</h2>
-            <p class="mt-2">Surrounded by the crater's walls, the landscapes within are a photographer's dream. From the
-                grassy plains to the Lerai Forest and the shimmering Lake Magadi, each corner of Ngorongoro Crater offers a
-                unique backdrop for capturing the beauty of the African wilderness.</p>
-            <h2 class="font-bold mt-3 mb-2">Conservation at its Core:</h2>
-            <p class="mt-2">As part of the Ngorongoro Conservation Area, the crater is dedicated to preserving its unique
-                ecosystem and maintaining a delicate balance between wildlife, culture, and sustainable tourism. Visitors
-                contribute to these conservation efforts simply by experiencing the wonder of Ngorongoro.</p>
-            <h2 class="font-bold mt-3 mb-2">Cultural Encounters:</h2>
-            <p class="mt-2">Beyond its natural wonders, Ngorongoro Crater is also a place where wildlife and Maasai culture
-                coexist. Engage with the local Maasai communities, known for their vibrant traditions and colorful attire.
-                Some lodges even offer cultural experiences, providing visitors with an opportunity to learn about the
-                indigenous people who share their home with the wildlife.</p>
+        <div class="p-10 flex bg-white text-black text-justify flex-col lg:flex-row">
+            <div class="lg:w-2/3 w-full p-3">
+                <p>Tanzania's Ngorongoro Crater, often referred to as the "Eighth Wonder of the World," is a geological
+                    marvel and a haven for wildlife enthusiasts. Nestled within the Ngorongoro Conservation Area, this
+                    ancient caldera offers a unique and immersive safari experience, showcasing a thriving ecosystem within
+                    its walls.
+                </p>
+                <p> Ngorongoro Crater is a massive volcanic caldera, formed millions of years ago. Today, it is a natural
+                    amphitheater, spanning over 260 square kilometers and harboring a remarkably high concentration of
+                    wildlife. The crater's floor is a lush paradise, providing a fertile habitat for a diverse array of
+                    flora and fauna.</p>
+                <p>
+                    The crater is home to an astonishing variety of wildlife, earning it the nickname "Noah's Ark of
+                    Africa." Encounter the iconic "Big Five" – lions, elephants, buffalos, leopards, and rhinoceros – as
+                    well as a multitude of other species such as hippos, zebras, wildebeests, and countless bird species.
+                    The compact nature of the crater ensures that game drives are filled with constant wildlife sightings.
+                </p>
+                <h2 class="primary gloria font-bold text-xl mt-3 mb-2">Itinerary</h2>
+                <p>After an early breakfast, you will descend into the Ngorongoro Crater on a journey to
+                    find the black rhino; the hardest animal to spot. Inside this beautiful crater, you will
+                    experience Africa’s version of “Noah’s Ark”, with a vast variety of wildlife including
+                    elephants, hyenas, big cats, rhinos, and more. In the afternoon, you will stop for lunch
+                    at the hippo lake and then enjoy another game drive as you ascend back up to the
+                    crater rim. Afterward we will head to Arusha town whereby it will be the end of our
+                    tour.</p>
+            </div>
+            <div class="lg:w-1/3 w-full p-3">
+                <div class="border border-black p-3">
+                    <h2 class="font-bold mb-2">Price:</h2>
+                    <ul class="ml-3 list-disc">
+                        <li>1pax: US $830 pp</li>
+                        <li>2pax: US $480 pp</li>
+                        <li>3pax: US $340 pp</li>
+                        <li>4-6pax: US $280 pp</li>
+                    </ul>
+                    <h2 class="font-bold mt-2 mb-2">Price Inclusion:</h2>
+                    <ul class="ml-3 mb-3 list-disc">
+                        <li>Lunch box</li>
+                        <li>Water</li>
+                        <li>All Entry Fee</li>
+                        <li>Government Tax 18%</li>
+                        <li>Safari Jeep (Go & Return)</li>
+                        <li>Crater fee</li>
+                        <li>Professional Safari Guide</li>
+                        <li>Full Day Game Drive.</li>
+                    </ul>
+                    <h2 class="font-bold mt-2 mb-2">Price Does Not Include:</h2>
+                    <ul class="ml-3 mb-3 list-disc">
+                        <li>VISA Application</li>
+                        <li>Flight</li>
+                        <li>All Entry Fee</li>
+                        <li>Travel Insurance</li>
+                        <li>Guide/ Driver tip </li>
+                    </ul>
+                    <p class="mb-2">The recommended amount for a driver is around 15 USD per day if you’re
+                        satisfied, to be divided by all your group members. Thank you! </p>
+                    <button class="bg-primary text-white w-full p-2" @click="$router.push('/book-now')">
+                        BOOK NOW
+                    </button>
 
-            <p class="mt-2 italic">EExperience the wonders of Ngorongoro – where wildlife, culture, and conservation
-                converge in a spectacular display of nature's grandeur!</p>
-
+                </div>
+            </div>
         </div>
         <div>
             <footer-bar></footer-bar>

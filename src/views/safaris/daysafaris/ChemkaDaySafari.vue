@@ -1,17 +1,16 @@
 <template>
+    <landing-nav></landing-nav>
     <div>
         <div class="intro">
-            <div class="p-4">
-                <landing-nav></landing-nav>
-            </div>
+
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center flex flex-col p-10 justify-center">
-                    <h1 class="text-5xl text-center mb-2 drop-shadow-xl homemade"> Chemka Hot Spring Day Sfari
+                    <h1 class="text-5xl text-center mb-2 drop-shadow-xl homemade"> Chemka Hot Spring Day Safari
                     </h1>
                 </div>
             </div>
         </div>
-        <div class="p-10 flex flex-col lg:flex-row text-justify">
+        <div class="p-10 bg-white text-black flex flex-col lg:flex-row text-justify">
 
             <div class="lg:w-2/3 w-full p-3">
                 <p>Welcome to a rejuvenating adventure with our Chemka Hot Springs Day Safari, a journey that combines the
@@ -20,6 +19,13 @@
                     Springs is a hidden oasis surrounded by lush greenery and towering palm trees. The crystal-clear,
                     turquoise water of the springs beckons you to unwind and soak in its therapeutic warmth, creating an
                     idyllic escape from the hustle and bustle of everyday life.</p>
+                <p class="mt-2">Maji Moto, known locally as Kikuletwa Hot springs, is paradisiac oasis amidst the
+                    Tanzanian savannah, offers captivating, Bounty-styled views, crystal-clean water, and
+                    dense vegetation around. </p>
+                <p class="mt-2">Chemka oasis is a unique phenomenon – it is the only place in Tanzania (and most
+                    likely in the whole East Africa), where the groundwater actively interacted with
+                    geothermal sources, forming a few small lakes with warm, never-stagnating water,
+                    which purity is not inferior to the best Dominican or Maldivian resorts.</p>
                 <h2 class="gloria primary text-2xl mt-4 mb-3">Itinerary</h2>
                 <h3 class="font-bold">Departure from Arusha:</h3>
                 <p>
@@ -44,25 +50,35 @@
                     experiences and enjoy the changing colors of the sky as the sun sets over the Tanzanian landscape.</p>
             </div>
             <div class="lg:w-1/3 w-full p-3">
-                <div class="border border-white p-2">
+                <div class="border border-black p-2">
                     <h2 class="font-bold mb-2">Price:</h2>
                     <ul class="ml-3 list-disc">
-                        <li>1pax: US $90 pp</li>
-                        <li>2pax: US $60 pp</li>
-                        <li>3pax: US $55 pp</li>
-                        <li>4-7pax: US $45 pp</li>
+                        <li>1pax: US $250 pp</li>
+                        <li>2pax: US $140 pp</li>
+                        <li>3pax: US $103 pp</li>
+                        <li>4-6pax: US $98 pp</li>
                     </ul>
+                    <h2 class="font-bold mb-2">Price Inclusion:</h2>
                     <ul class="ml-3 mb-3 list-disc">
-                        <li>Private transport from your accommodation to the Hot Springs and back, English speaking
-                            driver</li>
-                        <li>Entrance fee to the Hot Springs</li>
-                        <li>Picnic lunch at the Hot Springs</li>
-                        <li>Drinks</li>
+                        <li>Lunch box</li>
+                        <li>Soft Drinks & Water</li>
+                        <li>All Entry Fee</li>
+                        <li>Government Tax 18%</li>
+                        <li>Transfer from Arusha (Go & Return)</li>
+                        <li>Guided tour (coffee plantation, Waterfalls)</li>
+                    </ul>
+                    <h2 class="font-bold mt-2 mb-2">Price Does Not Include:</h2>
+                    <ul class="ml-3 mb-3 list-disc">
+                        <li>VISA Application</li>
+                        <li>Flight</li>
+                        <li>All Entry Fee</li>
+                        <li>Travel Insurance</li>
+                        <li>Guide/ Driver tip </li>
                     </ul>
                     <p class="mb-2">The recommended amount for a driver is around 15 USD per day if you’re
                         satisfied, to be divided by all your group members. Thank you! </p>
-                    <button class="bg-primary w-full p-2">
-                        <router-link to="book-now">BOOK NOW</router-link>
+                    <button class="bg-primary text-white w-full p-2" @click="$router.push('/book-now')">
+                        BOOK NOW
                     </button>
                 </div>
             </div>

@@ -1,52 +1,53 @@
 <template>
-  <main class="intro   bg-black text-white">
+  <landing-nav></landing-nav>
+  <main class="intro">
     <div class="p-4 fixed top-0 w-full">
-      <landing-nav></landing-nav>
+      
     </div>
     <div class="intro-main px-5  pt-10 flex justify-center items-center">
       <div class="items-center flex flex-col justify-center">
         <h1 class="lg:text-6xl text-center mb-2 text-4xl homemade drop-shadow-xl">Welcome to the Safaris</h1>
-        <button class="intro-btn mt-3"><span><a href="/book-now">Book Now</a></span></button>
+        <button class="intro-btn mt-3" @click="$router.push('/book-now')"><span>Book Now</span></button>
       </div>
     </div>
 
   </main>
-  <div class="p-10 mt-2">
+  <div class="p-10 bg-white text-black mt-2">
     <div class="flex justify-center">
       <h1 class="text-center gloria text-4xl flex items-center mb-2"> <img :src="destination" class="h-20 w-20 mr-4"
           alt="">
-        Popular Destinations</h1>
+        Tour Packages</h1>
     </div>
 
-    <div class="mt-4 grid grid-cols-1 lg:grid-cols-4 gap-4">
+    <div class="mt-4 grid text-white grid-cols-1 lg:grid-cols-4 gap-4">
       <div class="p-1 rounded-md bg-black tarangire h-96 flex flex-col justify-end" >
         <div class="p-2 mt-1">
-          <h1 class="text-xl font-bold mb-1">Tarangire National Park</h1>
-          <button class="menu-btn w-full  "><router-link to="/tarangire">VIEW MORE</router-link></button>
+          <h1 class="text-xl font-bold mb-1">Tarangire National Park Day Trip</h1>
+          <button class="menu-btn w-full  " @click="$router.push('/tarangire-day-safari')">VIEW MORE</button>
         </div>
       </div>
       <div class="p-1 rounded-md bg-black serengeti h-96 flex flex-col justify-end">
         <div class="p-2  mt-1">
-          <h1 class="text-xl font-bold mb-1">Serengeti National Park</h1>
-          <button class="menu-btn w-full  "><router-link to="/serengeti">VIEW MORE</router-link></button>
+          <h1 class="text-xl font-bold mb-1">Two Day Wonders in Nothern Tanzania</h1>
+          <button class="menu-btn w-full  " @click="$router.push('/two-day-wonders')">VIEW MORE</button>
         </div>
       </div>
       <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">
         <div class="p-2  mt-1">
-          <h1 class="text-xl font-bold mb-1">Ngorongoro Conservation Area</h1>
-          <button class="menu-btn w-full   "><router-link to="/ngorongoro">VIEW MORE</router-link></button>
+          <h1 class="text-xl font-bold mb-1">Ngorongoro Day Trip</h1>
+          <button class="menu-btn w-full" @click="$router.push('/ngorongoro')">VIEW MORE</button>
         </div>
       </div>
       <div class="p-1 rounded-md bg-black arusha h-96 flex flex-col justify-end">
         <div class="p-2  mt-1">
-          <h1 class="text-xl font-bold mb-1">Arusha National Park</h1>
-          <button class="menu-btn w-full "><router-link to="/arusha">VIEW MORE</router-link></button>
+          <h1 class="text-xl font-bold mb-1">Arusha National Park Day Trip</h1>
+          <button class="menu-btn w-full " @click="$router.push('/arusha-day-safari')"> VIEW MORE</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="p-10 mt-2">
+  <div class="p-10 bg-white text-black">
     <div class="flex justify-center">
       <h1 class="text-center gloria text-4xl flex items-center mb-2">
         The Adventure of a Lifetime with Leviva</h1>

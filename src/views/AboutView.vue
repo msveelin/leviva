@@ -1,9 +1,7 @@
 <template>
-  <div>
+  <landing-nav></landing-nav>
+  <div class="bg-white text-black">
     <main class="intro  bg-black text-white">
-      <div class="p-4">
-        <landing-nav></landing-nav>
-      </div>
       <div class="h-96 flex justify-center items-center">
         <div class="items-center flex p-5 text-center flex-col justify-center">
           <h1 class="lg:text-7xl mb-2 text-4xl drop-shadow-xl homemade">Where the sunsets are golden</h1>

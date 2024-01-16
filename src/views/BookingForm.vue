@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <landing-nav></landing-nav>
+    <div class="bg-white text-black">
         <main class="intro  bg-black text-white">
             <div class="p-4 fixed top-0 w-full">
-                <landing-nav></landing-nav>
             </div>
             <div class="intro-main pt-10 flex justify-center items-center">
                 <div class="items-center flex flex-col justify-center">
@@ -15,16 +15,16 @@
         <div class="mt-5 flex flex-col justify-center items-center w-full p-10">
             <form @submit.prevent="submitForm" class="w-2/3 flex flex-col">
                 <label for="name">Name:</label>
-                <input v-model="formData.name" type="text" id="name" name="name" required>
+                <input class="shadow-sm bg-gray-50" v-model="formData.name" type="text" id="name" name="name" required>
 
                 <br>
 
                 <label for="email">Email:</label>
-                <input v-model="formData.email_id" type="email" id="email" name="email_id" required>
+                <input class="shadow-sm bg-gray-50" v-model="formData.email_id" type="email" id="email" name="email_id" required>
 
                 <br>
                 <label for="tour">Select Safari Tour:</label>
-                <select class="p-2 text-black rounded-xl mt-2 outline-none" id="tour" name="destination"
+                <select class="p-2 bg-gray-50 text-black rounded-xl mt-2 outline-none" id="tour" name="destination"
                     v-model="formData.destination" required>
                     <option value="Arusha National Park Day Safari">Arusha National Park Day Safari</option>
                     <option value="Tarangire National Park Dy Safari">Tarangire National Park Dy Safari</option>
@@ -33,14 +33,14 @@
                 </select>
                 <br>
                 <label for="participants">Number of Participants:</label>
-                <input type="number" v-model="formData.participants" id="participants" name="participants" min="1" required>
+                <input type="number" class="shadow-sm bg-gray-50" v-model="formData.participants" id="participants" name="participants" min="1" required>
                 <br>
 
                 <label for="date">Tour Date:</label>
-                <input type="date" v-model="formData.date" id="date" name="date" required>
+                <input type="date" class="shadow-sm bg-gray-50" v-model="formData.date" id="date" name="date" required>
 
 
-                <button class="bg-orange-400 hover:bg-white mt-3 hover:text-black p-2" type="submit">Book Now</button>
+                <button class="bg-orange-400 text-white hover:bg-black mt-3 rounded-md p-2" type="submit">Book Now</button>
             </form>
         </div>
         <div>
@@ -90,7 +90,7 @@ const submitForm = async () => {
 
         console.log('Auto-reply email sent:', autoReplyResponse);
 
-         // Redirect to a thank-you page
+        // Redirect to a thank-you page
         router.push('/thank-you');
 
     } catch (error) {

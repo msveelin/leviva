@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="bg-white">
         <img src="../../assets/footer-bg.svg" class="w-full" alt="">
     </div>
-    <div class="p-10 footer">
+    <div class="p-10 text-white footer">
         <div class="flex justify-between items-start">
             <div class="w-1/2">
                 <h2 class="font-bold text-xl">Leviva Travel and Tours</h2>

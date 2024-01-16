@@ -1,16 +1,14 @@
 <template>
+    <landing-nav></landing-nav>
     <div>
         <div class="intro">
-            <div class="p-4">
-                <landing-nav></landing-nav>
-            </div>
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center text-center p-5 flex flex-col justify-center">
                     <h1 class="lg:text-7xl text-4xl mb-2 drop-shadow-xl homemade">Safari dreams come true.</h1>
                 </div>
             </div>
         </div>
-        <div class="p-10 text-justify">
+        <div class="p-10 bg-white text-black text-justify">
             <h1 class="gloria text-3xl text-center mb-3">Unleash the Adventure: Discover Extraordinary Safaris</h1>
             <div class="p-3">
                 <p>Welcome to the wild side of travel with Leviva's Safari Experiences. Immerse yourself in the heart of
@@ -36,31 +34,31 @@
             </div>
 
             <h1 class="gloria text-3xl text-center mt-3 mb-3">Explore Our Safari Packages</h1>
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 text-white">
                 <div class="p-1 rounded-md bg-black balloon h-96 flex flex-col justify-end">
                     <div class="p-2 mt-1 w-full">
                         <h1 class="text-xl font-bold mb-1">Balloon Safaris</h1>
-                        <button class="menu-btn w-full"><router-link to="balloon-safaris">VIEW MORE</router-link></button>
+                        <button class="menu-btn w-full" @click="$router.push('/balloon-safaris')">VIEW MORE</button>
                     </div>
                 </div>
                 <div class="p-1 rounded-md bg-black serengeti h-96 flex flex-col justify-end">
                     <div class="p-2  mt-1">
                         <h1 class="text-xl font-bold mb-1">Day Safaris</h1>
-                        <button class="menu-btn w-full  "><router-link to="day-safaris">VIEW MORE</router-link></button>
+                        <button class="menu-btn w-full  " @click="$router.push('/day-safaris')">VIEW MORE</button>
                     </div>
                 </div>
-                <!-- <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">
+                <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">
                     <div class="p-2  mt-1">
-                        <h1 class="text-xl font-bold mb-1">2-day Safaris</h1>
-                        <button class="menu-btn w-full   "><span>VIEW MORE</span></button>
+                        <h1 class="text-xl font-bold mb-1">2 Days of Wonders In Nothern Tanzania</h1>
+                        <button class="menu-btn w-full  " @click="$router.push('/two-day-wonders')"><span>VIEW MORE</span></button>
                     </div>
                 </div>
                 <div class="p-1 rounded-md bg-black arusha h-96 flex flex-col justify-end">
                     <div class="p-2  mt-1">
                         <h1 class="text-xl font-bold mb-1">3-day Safaris</h1>
-                        <button class="menu-btn w-full "><span>VIEW MORE</span></button>
+                        <button class="menu-btn w-full " @click="$router.push('/three-day-wonders')"><span>VIEW MORE</span></button>
                     </div>
-                </div> -->
+                </div>
             </div>
 
             <h1 class="gloria text-3xl text-center mt-7 mb-3">What to wear on a safari</h1>
@@ -143,4 +141,5 @@ import LandingNav from '@/components/shared/LandingNav.vue';
     background-color: rgba(0, 0, 0, 0.5);
     /* Adjust the alpha value (0.0 to 1.0) for transparency */
     background-blend-mode: overlay;
-}</style>
+}
+</style>

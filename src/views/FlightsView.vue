@@ -1,9 +1,8 @@
 <template>
-    <div>
-        <div class="intro">
-            <div class="p-4">
-                <landing-nav></landing-nav>
-            </div>
+    <landing-nav></landing-nav>
+    <div class="bg-white text-black">
+        <div class="intro text-white">
+
             <div class="intro-main p-5 flex justify-center items-center">
                 <div class="items-center flex text-center flex-col justify-center">
                     <h1 class="text-7xl mb-2  drop-shadow-xl homemade">Conquer the skies with us</h1>
@@ -47,8 +46,8 @@
                 <p class="mt-2 mb-1">🤝 <b>Trusted Partnerships:</b>
                     As a travel agency committed to excellence, we have forged strong partnerships with major airlines. This
                     allows us to provide you with exclusive deals, perks, and access to a vast network of flights.</p>
-                    <h1 class="gloria text-3xl mt-3 text-center mb-3">Some Airlines We Work With</h1>
-                    <img src="../assets/airlines.svg" class="mt-3" alt="">
+                <h1 class="gloria text-3xl mt-3 text-center mb-3">Some Airlines We Work With</h1>
+                <img src="../assets/airlines.svg" class="mt-3" alt="">
             </div>
 
         </div>
