@@ -3,7 +3,17 @@
         <img src="../../assets/footer-bg.svg" class="w-full" alt="">
     </div>
     <div class="p-10 text-white footer">
-        <img src="../../assets/logo.svg" class="h-32 w-32" alt="">
+      <div class="mb-3">
+        <h1 class="text-2xl font-bold mb-2">Want to Contact Us?</h1>
+        <p>We are delighted to assist you, available 24hrs through out the week!</p>
+        <div class="flex mt-2">
+          <input type="text" class="w-96 p-3 bg-white rounded-full outline-none border-0" placeholder="Send us a message...">
+          <button type="submit" class="p-3 rounded-full bg-amber-950 text-white font-bold mx-3">SEND</button>
+        </div>
+      </div>
+        <div>
+          <img src="../../assets/logo.svg" class="h-32 w-32" alt="">
+        </div>
         <div class="flex flex-col md:flex-row justify-between items-start">
             <div class="w-full md:w-1/3">
                 
@@ -35,11 +45,14 @@
             </div>
         </div>
         <div class="mt-3 w-full p-3 text-center">
-            <p>All Rights Reserved</p>
+            <p>Copyright&copy;{{currentYear}}. All Rights Reserved</p>
         </div>
     </div>
 </template>
-<script setup></script>
+<script setup>
+const date = new Date()
+let currentYear = date.getFullYear()
+</script>
 <style scoped>
 .footer {
     background-color: #ffa732;

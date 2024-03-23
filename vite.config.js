@@ -1,5 +1,3 @@
-import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -10,9 +8,13 @@ export default defineConfig({
     vue(),
     vueJsx(),
   ],
+  optimizeDeps: {
+    include: ['bootstrap-vue']
+  },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      // Resolve paths relative to the current module file using import.meta.url
+      '@': new URL('./src', import.meta.url).pathname
     }
   }
 })
