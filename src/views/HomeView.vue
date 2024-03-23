@@ -11,26 +11,78 @@
       <div class="flex items-center justify-center">
         <div class="my-5 p-5 mt-5 w-3/4 grid grid-cols-4 gap-6">
 
-          <div class="h-72 flex flex-col justify-between bg-amber-300 serengeti shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+          <div class="h-72 flex flex-col cursor-pointer justify-between bg-amber-300 serengeti shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
               <h1 class="fjalla-one-regular text-xl">Serengeti National Park</h1>
-              <p>Where the wilderness whispers and the lion roars.</p>
+              <p>"Where the wilderness whispers and the lion roars."</p>
             </div>
             <div class="w-full">
               <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
             </div>
           </div>
-          <router-link to="/serengeti">
-            <div class="h-72 bg-amber-300 rounded-md p-3 text-white">Serengeti</div>
-          </router-link>
-
-          <router-link to="/serengeti">
-            <div class="h-72 bg-amber-300 rounded-md p-3 text-white">Serengeti</div>
-          </router-link>
-
-          <router-link to="/serengeti">
-            <div class="h-72 bg-amber-300 rounded-md p-3 text-white">Serengeti</div>
-          </router-link>
+          <div class="h-72 flex flex-col cursor-pointer justify-between bg-amber-300 tarangire shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+            <div>
+              <h1 class="fjalla-one-regular text-xl">Tarangire National Park</h1>
+              <p>"Amongst the baobabs, the pulse of Africa beats strong."</p>
+            </div>
+            <div class="w-full">
+              <button @click="$router.push('/tarangire')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+            </div>
+          </div>
+          <div class="h-72 flex flex-col cursor-pointer justify-between bg-amber-300 ngorongoro shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+            <div>
+              <h1 class="fjalla-one-regular text-xl">Ngorongoro Conservation Area</h1>
+              <p>"Where ancient volcanoes cradle a world of wonders."</p>
+            </div>
+            <div class="w-full">
+              <button @click="$router.push('/ngorongoro')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+            </div>
+          </div>
+          <div class="h-72 flex flex-col justify-between bg-amber-300 kili shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+            <div>
+              <h1 class="fjalla-one-regular text-xl">Mount. Kilimanjaro</h1>
+              <p>Climb the tallest peak and touch the sky.</p>
+            </div>
+            <div class="w-full">
+              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+            </div>
+          </div>
+          <div class="h-72 flex flex-col justify-between bg-amber-300 lake-manyara shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+            <div>
+              <h1 class="fjalla-one-regular text-xl">Lake Manyara National Park</h1>
+              <p>In the shadow of the Rift Valley, a jewel awaits discovery.</p>
+            </div>
+            <div class="w-full">
+              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+            </div>
+          </div>
+          <div class="h-72 flex flex-col justify-between bg-amber-300 arusha shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+            <div>
+              <h1 class="fjalla-one-regular text-xl">Arusha National Park</h1>
+              <p>Where the golden grasses sway, adventure awaits at every turn</p>
+            </div>
+            <div class="w-full">
+              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+            </div>
+          </div>
+          <div class="h-72 flex flex-col justify-between bg-amber-300 selous shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+            <div>
+              <h1 class="fjalla-one-regular text-xl">Selous Game Reserve</h1>
+              <p>In the heart of Africa's wilderness, Selous beckons the explorer.</p>
+            </div>
+            <div class="w-full">
+              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+            </div>
+          </div>
+          <div class="h-72 flex flex-col justify-between bg-amber-300 mikumi shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+            <div>
+              <h1 class="fjalla-one-regular text-xl">Mikumi National Park</h1>
+              <p>Where the savannah stretches to the horizon, adventure awaits.</p>
+            </div>
+            <div class="w-full">
+              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -132,8 +184,53 @@ import CarouselSlider from "@/components/shared/CarouselSlider.vue";
 .intro-main {
   height: 80vh;
 }
+
 .tarangire {
   background-image: url("../assets/images/tarangire.jpg");
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust the alpha value (0.0 to 1.0) for transparency */
+  background-blend-mode: overlay;
+}
+
+.selous {
+  background-image: url("../assets/images/selous.jpg");
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust the alpha value (0.0 to 1.0) for transparency */
+  background-blend-mode: overlay;
+}
+
+.mikumi {
+  background-image: url("../assets/images/mikumi.jpg");
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust the alpha value (0.0 to 1.0) for transparency */
+  background-blend-mode: overlay;
+}
+
+.kili {
+  background-image: url("../assets/images/kilimanjaro.jpg");
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust the alpha value (0.0 to 1.0) for transparency */
+  background-blend-mode: overlay;
+}
+
+.lake-manyara {
+  background-image: url("../assets/images/lake-manyara.jpg");
   background-size: cover;
   object-fit: cover;
   background-position: center;
