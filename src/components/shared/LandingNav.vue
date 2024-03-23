@@ -48,7 +48,7 @@
             <a href="mailto: info@levivainvestments.co.tz">info@levivatravelandtours.com</a>
         </div>
     </div>
-    <div class="bg-white">
+    <div class="bg-white font-semibold">
         <div class="p-1 px-3 bg-white text-black flex justify-between items-center">
             <router-link to="/">
                 <img :src="logo" alt="" class="h-20 w-20 hover:scale-105 cursor-pointer">

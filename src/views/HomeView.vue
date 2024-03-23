@@ -6,10 +6,10 @@
       <carousel-slider></carousel-slider>
     </div>
     <div class="p-10 bg-white text-black">
-      <h2 class="text-center font-semibold fjalla-one-regular text-2xl hover:scale-105">TRAVEL DESTINATIONS</h2>
-      <h3 class="text-center text-5xl chelsea-market-regular animate__animated animate__bounceIn">YOUR GUIDE TO THE GREATEST WONDERS</h3>
+      <h2 class="text-center font-semibold fjalla-one-regular text-2xl hover:scale-105 drop-shadow-md">TRAVEL DESTINATIONS</h2>
+      <h3 class="text-center text-5xl chelsea-market-regular animate__animated animate__bounceIn drop-shadow-md">YOUR GUIDE TO THE GREATEST WONDERS</h3>
       <div class="flex items-center justify-center">
-        <div class="my-5 p-5 mt-5 w-3/4 grid grid-cols-4 gap-6">
+        <div class=" p-5 mt-5 w-full md:w-3/4 grid grid-cols-2 md:grid-cols-4 gap-6">
 
           <div class="h-72 flex flex-col cursor-pointer justify-between bg-amber-300 serengeti shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
@@ -67,8 +67,8 @@
           </div>
           <div class="h-72 flex flex-col justify-between bg-amber-300 selous shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
-              <h1 class="fjalla-one-regular text-xl">Selous Game Reserve</h1>
-              <p>In the heart of Africa's wilderness, Selous beckons the explorer.</p>
+              <h1 class="fjalla-one-regular text-xl">Stone Town</h1>
+              <p>Where ancient history whispers through labyrinthine streets</p>
             </div>
             <div class="w-full">
               <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
@@ -76,8 +76,8 @@
           </div>
           <div class="h-72 flex flex-col justify-between bg-amber-300 mikumi shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
-              <h1 class="fjalla-one-regular text-xl">Mikumi National Park</h1>
-              <p>Where the savannah stretches to the horizon, adventure awaits.</p>
+              <h1 class="fjalla-one-regular text-xl">Unguja, Zanzibar</h1>
+              <p>Where azure waters embrace shores kissed by the warmth of Swahili culture</p>
             </div>
             <div class="w-full">
               <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
@@ -88,36 +88,59 @@
     </div>
     <div class="p-10 bg-white text-black mt-2">
 
-      <div class="flex justify-center">
-        <h1 class="text-center chelsea-market-regular text-4xl flex items-center mb-2"> <img :src="destination" class="h-20 w-20 mr-4"
-                                                                             alt="">
-          Tour Packages</h1>
+      <div class="bg-white p-5">
+        <h1 class="homemade drop-shadow-md text-2xl text-center">Where The Adventure Never Stops</h1>
+
+        <div class="p-10 text-center">
+          <p class="my-1">A Tanzania holiday is an exclusive experience than any other! Tanzania is a top safari destination and has a lot to offer. From variety of selections such as experiencing an amazing Tanzania safari or relax and sun-bathe at the most beautiful beaches on Zanzibar Island.</p>
+          <p class="my-1 text-amber-500">Is trekking Kilimanjaro in your bucket list? ,We also offer that.</p>
+          <p class="my-1"><b>Leviva Travel and Tours</b>  offers the most extensive range of Tanzania vacation from solo, private to group joining safaris for single individuals, couples, families, friends, or groups of people from all over the world are able to book holidays directly in Tanzania also Zanzibar, including Flights or Hotel/accommodation bookings.</p>
+        </div>
       </div>
 
-      <div class="mt-4 grid text-white grid-cols-1 lg:grid-cols-4 gap-4">
-        <div class="p-1 rounded-md bg-black tarangire h-96 flex flex-col justify-end" >
-          <div class="p-2 mt-1">
-            <h1 class="text-xl font-bold mb-1">Tarangire National Park Day Trip</h1>
-            <button class="menu-btn w-full  " @click="$router.push('/tarangire-day-safari')">VIEW MORE</button>
+      <div class="flex justify-center">
+        <h1 class="text-center chelsea-market-regular text-5xl flex items-center mb-2"> <img :src="destination" class="h-20 w-20 mr-4"
+                                                                             alt="">
+          <span class="drop-shadow-md">Tour Packages</span></h1>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        
+        <div class="mt-4 w-3/4 grid text-white grid-cols-1 lg:grid-cols-4 gap-4">
+
+        <div class="rounded-md cursor-pointer h-72 shadow-md relative overflow-hidden">
+          <img src="../assets/images/two-day.jpg" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125 ease-in-out">
+          <div class="p-2 mt-1 overlaying w-full absolute bottom-0">
+              <h1 class="text-xl font-bold mb-1">Tarangire National Park Day Trip</h1>
+              <button class="menu-btn w-full" @click="$router.push('/tarangire-day-safari')">VIEW MORE</button>
           </div>
         </div>
-        <div class="p-1 rounded-md bg-black serengeti h-96 flex flex-col justify-end">
-          <div class="p-2  mt-1">
-            <h1 class="text-xl font-bold mb-1">Two Day Wonders in Nothern Tanzania</h1>
-            <button class="menu-btn w-full  " @click="$router.push('/two-day-wonders')">VIEW MORE</button>
+        
+                       
+          <div class="rounded-md cursor-pointer h-72 shadow-md relative overflow-hidden">
+            <img src="../assets/images/serengeti.jpg" alt="" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125">
+            <div class="p-2 mt-1 overlaying absolute bottom-0">
+              <h1 class="text-xl font-bold mb-1">Two Day Wonders in Nothern Tanzania</h1>
+              <button class="menu-btn w-full  " @click="$router.push('/two-day-wonders')">VIEW MORE</button>
+            </div>
+          </div>
+          <div class="rounded-md cursor-pointer h-72 shadow-md relative overflow-hidden">
+            <img src="../assets/images/ngorongoro.jpg" alt="" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125">
+            <div class="p-2 mt-1 overlaying absolute bottom-0">
+              <h1 class="text-xl font-bold mb-1">Ngorongoro Day Trip</h1>
+              <button class="menu-btn w-full" @click="$router.push('/ngorongoro')">VIEW MORE</button>
+            </div>
+          </div>
+          <div class="rounded-md cursor-pointer h-72 shadow-md relative overflow-hidden">
+            <img src="../assets/images/arusha.jpg" alt="" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125">
+            <div class="p-2 mt-1 overlaying absolute bottom-0">
+              <h1 class="text-xl font-bold mb-1">Arusha National Park Day Trip</h1>
+              <button class="menu-btn w-full " @click="$router.push('/arusha-day-safari')"> VIEW MORE</button>
+            </div>
           </div>
         </div>
-        <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">
-          <div class="p-2  mt-1">
-            <h1 class="text-xl font-bold mb-1">Ngorongoro Day Trip</h1>
-            <button class="menu-btn w-full" @click="$router.push('/ngorongoro')">VIEW MORE</button>
-          </div>
-        </div>
-        <div class="p-1 rounded-md bg-black arusha h-96 flex flex-col justify-end">
-          <div class="p-2  mt-1">
-            <h1 class="text-xl font-bold mb-1">Arusha National Park Day Trip</h1>
-            <button class="menu-btn w-full " @click="$router.push('/arusha-day-safari')"> VIEW MORE</button>
-          </div>
+
+        <div class="flex items-center justify-center my-4">
+          <button class="bg-amber-500 text-white p-3 mt-4 shadow-md rounded-md hover:bg-black">VIEW MORE PACKAGES</button>
         </div>
       </div>
     </div>
@@ -197,7 +220,7 @@ import CarouselSlider from "@/components/shared/CarouselSlider.vue";
 }
 
 .selous {
-  background-image: url("../assets/images/selous.jpg");
+  background-image: url("../assets/images/raissa-lara-lutolf-fasel-Qaygg2blNl8-unsplash.jpg");
   background-size: cover;
   object-fit: cover;
   background-position: center;
@@ -208,7 +231,7 @@ import CarouselSlider from "@/components/shared/CarouselSlider.vue";
 }
 
 .mikumi {
-  background-image: url("../assets/images/mikumi.jpg");
+  background-image: url("../assets/images/olga-budko-hl0W9gS0C6k-unsplash.jpg");
   background-size: cover;
   object-fit: cover;
   background-position: center;
@@ -250,6 +273,12 @@ import CarouselSlider from "@/components/shared/CarouselSlider.vue";
   /* Adjust the alpha value (0.0 to 1.0) for transparency */
   background-blend-mode: overlay;
   transition: transform 0.5s; /* Add transition effect for smooth scaling */
+}
+
+.overlaying{
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust the alpha value (0.0 to 1.0) for transparency */
+  background-blend-mode: overlay;
 }
 
 
