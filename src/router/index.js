@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import adminRouter from '@/views/admin/adminRouter.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -118,6 +119,11 @@ const router = createRouter({
       component: () => import('@/views/NgorongoroConservationArea.vue')
     },
     {
+      path:'/ngorongoro-conservation-area',
+      name: 'ngorongoroconservation',
+      component: () => import('@/views/Ngorongoro.vue')
+    },
+    {
       path:'/two-day-wonders',
       name: 'twodaywonders',
       component: () => import('@/views/safaris/two-day-safaris/TwoDayWonders.vue')
@@ -126,7 +132,8 @@ const router = createRouter({
       path:'/three-day-wonders',
       name: 'threedaywonders',
       component: () => import('@/views/safaris/three-day-safaris/ThreeDay.vue')
-    }
+    },
+    ...adminRouter
   ]
 })
 

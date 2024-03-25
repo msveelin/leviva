@@ -1,17 +1,15 @@
 <template>
-    <div>
+    <div class="bg-white">
+        <landing-nav></landing-nav>
         <div class="intro">
-            <div class="p-4">
-                <landing-nav></landing-nav>
-            </div>
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center flex flex-col p-10 justify-center">
-                    <h1 class="text-5xl text-center mb-2 drop-shadow-xl homemade"> Tarangire National Park
+                    <h1 class="text-7xl text-center mb-2 drop-shadow-xl chelsea-market-regular"> Tarangire National Park
                     </h1>
                 </div>
             </div>
         </div>
-        <div class="p-10">
+        <div class="p-10 text-black">
             <p>Nestled in the heart of Tanzania, Tarangire National Park stands as a testament to the country's commitment
                 to wildlife conservation. This breathtaking reserve, covering over 2,800 square kilometers, is a haven for
                 nature enthusiasts, offering a unique blend of diverse landscapes and abundant wildlife.</p>

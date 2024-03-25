@@ -35,10 +35,10 @@
               <p>"Where ancient volcanoes cradle a world of wonders."</p>
             </div>
             <div class="w-full">
-              <button @click="$router.push('/ngorongoro')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+              <button @click="$router.push('/ngorongoro-conservation-area')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
             </div>
           </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 kili shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer kili shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
               <h1 class="fjalla-one-regular text-xl">Mount. Kilimanjaro</h1>
               <p>Climb the tallest peak and touch the sky.</p>
@@ -47,7 +47,7 @@
               <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
             </div>
           </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 lake-manyara shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer lake-manyara shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
               <h1 class="fjalla-one-regular text-xl">Lake Manyara National Park</h1>
               <p>In the shadow of the Rift Valley, a jewel awaits discovery.</p>
@@ -56,7 +56,7 @@
               <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
             </div>
           </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 arusha shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer arusha shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
               <h1 class="fjalla-one-regular text-xl">Arusha National Park</h1>
               <p>Where the golden grasses sway, adventure awaits at every turn</p>
@@ -65,7 +65,7 @@
               <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
             </div>
           </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 selous shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer selous shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
               <h1 class="fjalla-one-regular text-xl">Stone Town</h1>
               <p>Where ancient history whispers through labyrinthine streets</p>
@@ -74,7 +74,7 @@
               <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
             </div>
           </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 mikumi shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer mikumi shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
               <h1 class="fjalla-one-regular text-xl">Unguja, Zanzibar</h1>
               <p>Where azure waters embrace shores kissed by the warmth of Swahili culture</p>
@@ -89,9 +89,9 @@
     <div class="p-10 bg-white text-black mt-2">
 
       <div class="bg-white p-5">
-        <h1 class="homemade drop-shadow-md text-2xl text-center">Where The Adventure Never Stops</h1>
+        <h1 class="homemade drop-shadow-md text-3xl text-center">Where The Adventure Never  Stops</h1>
 
-        <div class="p-10 text-center">
+        <div class="p-10 text-lg text-center">
           <p class="my-1">A Tanzania holiday is an exclusive experience than any other! Tanzania is a top safari destination and has a lot to offer. From variety of selections such as experiencing an amazing Tanzania safari or relax and sun-bathe at the most beautiful beaches on Zanzibar Island.</p>
           <p class="my-1 text-amber-500">Is trekking Kilimanjaro in your bucket list? ,We also offer that.</p>
           <p class="my-1"><b>Leviva Travel and Tours</b>  offers the most extensive range of Tanzania vacation from solo, private to group joining safaris for single individuals, couples, families, friends, or groups of people from all over the world are able to book holidays directly in Tanzania also Zanzibar, including Flights or Hotel/accommodation bookings.</p>
@@ -140,7 +140,7 @@
         </div>
 
         <div class="flex items-center justify-center my-4">
-          <button class="bg-amber-500 text-white p-3 mt-4 shadow-md rounded-md hover:bg-black">VIEW MORE PACKAGES</button>
+          <button @click="$router.push('/safaris')" class="bg-amber-500 text-white p-3 mt-4 shadow-md rounded-md hover:scale-105 hover:bg-black">VIEW MORE PACKAGES</button>
         </div>
       </div>
     </div>
@@ -148,39 +148,67 @@
 
     <div class="p-10 bg-white text-black">
       <div class="flex justify-center">
-        <h1 class="text-center gloria text-4xl flex items-center mb-2">
+        <h1 class="text-center chelsea-market-regular drop-shadow-md text-5xl flex items-center">
           The Adventure of a Lifetime with Leviva</h1>
       </div>
       <div class="lg:p-10 p-5 text-justify mt-3">
-        <p>Embark on a journey like no other with Leviva Travel and Tours. Immerse yourself in the heart of untamed
-          landscapes, where the call of the wild beckons and every moment is an exploration into the extraordinary. Our
-          travel safaris are meticulously crafted to deliver an unforgettable experience, blending luxury with the thrill of
-          the wilderness.</p>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 p-3">
-          <p>🌍 <b> Discover the Wild Wonders:</b>
-            Step into the realm of majestic beasts and breathtaking landscapes. Our carefully curated safaris take you to
-            the most iconic wildlife destinations, from the sweeping plains of the Serengeti to the enticing beauty of the
-            Kilimanjaro. Witness the untamed beauty of nature as you encounter elephants roaming freely, lions on the prowl,
-            and
-            exotic birds painting the sky.</p>
-          <p>🏞️ <b>Luxury Amidst the Wilderness:</b>
-            Indulge in opulent accommodations that seamlessly blend with nature. Our carefully selected lodges and campsites
-            provide the perfect balance between comfort and the authentic safari experience. Imagine waking up to the sounds
-            of the wilderness, surrounded by the beauty of the great outdoors.</p>
-          <p>🚙 <b>Expertly Guided Expeditions:</b>
-            Our seasoned guides are passionate about wildlife and the regions they explore. With a wealth of knowledge,
-            they'll lead you through the hidden gems of each destination, providing insights into the behavior of animals,
-            local cultures, and conservation efforts. Every moment becomes a chance to learn and appreciate the wonders of
-            the natural world</p>
-          <p>🌅 <b>Bespoke Safari Experiences:</b>
-            Tailor your adventure to match your desires. Whether you seek a family-friendly escapade, a romantic getaway, or
-            a photography-focused expedition, we customize every safari to suit your preferences. From sunrise hot air
-            balloon rides to intimate sundowner game drives, the choice is yours.</p>
-          <p>🤝 <b>Book Your Safari Today:</b>
-            Seize the opportunity to witness nature's grandeur in its purest form. Let [Your Safari Company Name] be your
-            gateway to an extraordinary safari experience. Begin your journey by exploring our safari packages or contact
-            our travel experts for a personalized itinerary. Adventure awaits – are you ready?</p>
-        </div>
+        
+          <div class="w-full flex text-lg flex-col items-center justify-center">
+            <p class="w-2/3">Embark on a journey like no other with Leviva Travel and Tours. Immerse yourself in the heart of untamed
+              landscapes, where the call of the wild beckons and every moment is an exploration into the extraordinary. Our
+              travel safaris are meticulously crafted to deliver an unforgettable experience, blending luxury with the thrill of
+              the wilderness.</p>
+            <div class="flex items-center mt-7 w-2/3">
+              <div class="w-1/3 mr-7">
+                <img src="../assets/images/IMG_0088.jpg" class="w-full rounded-md h-auto hover:scale-105 cursor-pointer object-cover" alt="">
+              </div>
+              <p class="w-2/3">🌍 <b> Discover the Wild Wonders:</b>
+                Step into the realm of majestic beasts and breathtaking landscapes. Our carefully curated safaris take you to
+                the most iconic wildlife destinations, from the sweeping plains of the Serengeti to the enticing beauty of the
+                Kilimanjaro. Witness the untamed beauty of nature as you encounter elephants roaming freely, lions on the prowl,
+                and
+                exotic birds painting the sky.</p>
+            </div>
+            <div class="flex items-center mt-7 w-2/3">
+              <p class="w-2/3">🏞️ <b>Luxury Amidst the Wilderness:</b>
+                Indulge in opulent accommodations that seamlessly blend with nature. Our carefully selected lodges and campsites
+                provide the perfect balance between comfort and the authentic safari experience. Imagine waking up to the sounds
+                of the wilderness, surrounded by the beauty of the great outdoors.</p>
+                <div class="w-1/3 ml-7">
+                  <img src="../assets/images/IMG_5703.jpg" alt="" class="w-full rounded-md h-auto hover:scale-105 cursor-pointer object-cover">
+                </div>
+            </div>
+            <div class="flex items-center mt-7 w-2/3">
+              <div class="w-1/3 mr-7">
+                <img src="../assets/images/expertguides.jpeg" alt="" class="w-full rounded-md h-auto hover:scale-105 cursor-pointer object-cover">
+              </div>
+              <p class="w-2/3">🚙 <b>Expertly Guided Expeditions:</b>
+                Our seasoned guides are passionate about wildlife and the regions they explore. With a wealth of knowledge,
+                they'll lead you through the hidden gems of each destination, providing insights into the behavior of animals,
+                local cultures, and conservation efforts. Every moment becomes a chance to learn and appreciate the wonders of
+                the natural world</p>
+            </div>
+            <div class="flex items-center mt-7 w-2/3">
+              <p class="w-2/3">🌅 <b>Bespoke Safari Experiences:</b>
+                Tailor your adventure to match your desires. Whether you seek a family-friendly escapade, a romantic getaway, or
+                a photography-focused expedition, we customize every safari to suit your preferences. From sunrise hot air
+                balloon rides to intimate sundowner game drives, the choice is yours.</p>
+                <div class="w-1/3 ml-7">
+                  <img src="../assets/images/IMG_9310.jpg" alt="" class="w-full rounded-md h-auto hover:scale-105 cursor-pointer object-cover">
+                </div>
+            </div>
+            <div class="flex items-center mt-7 w-2/3">
+              <div class="w-1/3 mr-7">
+                <img src="../assets/images/IMG_9393.jpg" alt="" class="w-full rounded-md h-auto hover:scale-105 cursor-pointer object-cover">
+              </div>
+              <p class="w-2/3">🤝 <b>Book Your Safari Today:</b>
+                Seize the opportunity to witness nature's grandeur in its purest form. Let [Your Safari Company Name] be your
+                gateway to an extraordinary safari experience. Begin your journey by exploring our safari packages or contact
+                our travel experts for a personalized itinerary. Adventure awaits – are you ready?</p>
+            </div>
+          </div>
+          
+        
         <p class="mt-10 gloria text-xl text-center">Leviva Travel and Tours - Your Safari, Your Way.</p>
       </div>
     </div>

@@ -1,17 +1,15 @@
 <template>
-    <div>
+    <div class="bg-white">
+        <landing-nav></landing-nav>
         <div class="intro">
-            <div class="p-4">
-                <landing-nav></landing-nav>
-            </div>
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center flex flex-col p-10 justify-center">
-                    <h1 class="text-5xl text-center mb-2 drop-shadow-xl homemade"> Serengeti National Park
+                    <h1 class="text-7xl text-center mb-2 drop-shadow-xl chelsea-market-regular"> Serengeti National Park
                     </h1>
                 </div>
             </div>
         </div>
-        <div class="p-10">
+        <div class="p-10 text-black">
             <p>Serengeti National Park stands as a testament to the raw beauty and untamed wilderness of Africa. This iconic
                 park, renowned for its annual wildebeest migration and diverse ecosystems, promises an unforgettable safari
                 experience for nature enthusiasts and wildlife lovers alike.</p>

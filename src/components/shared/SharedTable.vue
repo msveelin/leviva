@@ -1,0 +1,40 @@
+<template>
+    <div>
+        <!-- {{ tableData }} -->
+        <table class="border w-full">
+            <thead>
+                <tr>
+                    <th class="border text-left p-1 bg-amber-400 text-white">S/N</th>
+                    <th class="border text-left p-1 bg-amber-400 text-white" v-for="(column, index) in columns" :key="index">
+                        {{ column }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(data, index) of tableData" :key="index">
+                    <td class="border p-2 text-left">{{ index + 1 }}</td>
+                    <td class="border p-2 text-left" v-for="key of Object.keys(columns)" :key="key">
+                        <slot :name="key" :itemData="data" :index="index">
+                          {{ data[key] }}
+                        </slot>
+                      </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</template>
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const props = defineProps({
+    tableData: {
+      type: Array,
+      default: () => []
+    },
+    columns: {
+      type: Array,
+      default: () => []
+    },
+})
+
+</script>

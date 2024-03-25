@@ -7,7 +7,7 @@
         <h1 class="text-2xl font-bold mb-2">Want to Contact Us?</h1>
         <p>We are delighted to assist you, available 24hrs through out the week!</p>
         <div class="flex mt-2">
-          <input type="text" class="w-96 p-3 bg-white rounded-full outline-none border-0" placeholder="Send us a message...">
+          <input type="text" class="w-96 p-3 bg-white text-black rounded-full outline-none border-0" placeholder="Send us a message...">
           <button type="submit" class="p-3 rounded-full bg-amber-950 text-white font-bold mx-3">SEND</button>
         </div>
       </div>
