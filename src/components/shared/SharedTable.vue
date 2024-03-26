@@ -8,6 +8,7 @@
                     <th class="border text-left p-1 bg-amber-400 text-white" v-for="(column, index) in columns" :key="index">
                         {{ column }}
                     </th>
+                    <th class="border text-left p-1 bg-amber-400 text-white" v-if="hasActions">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -15,9 +16,12 @@
                     <td class="border p-2 text-left">{{ index + 1 }}</td>
                     <td class="border p-2 text-left" v-for="key of Object.keys(columns)" :key="key">
                         <slot :name="key" :itemData="data" :index="index">
-                          {{ data[key] }}
+                            {{ data[key] }}
                         </slot>
-                      </td>
+                    </td>
+                    <td class="border p-2 text-left" v-if="hasActions">
+                        <slot name="actions" :itemData="data" :index="index"></slot>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -35,6 +39,9 @@ const props = defineProps({
       type: Array,
       default: () => []
     },
+    hasActions: {
+        type: Boolean
+    }
 })
 
 </script>

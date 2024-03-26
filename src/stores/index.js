@@ -22,27 +22,29 @@ export const useApiStore = defineStore('api', {
 
     async createResource(resource, data) {
       try {
-        const response = await axios.post(`/api/${resource}`, data);
+        const { response } = await axios.post(`http://localhost/leviva-backend/api/${resource}_api.php`, data);
         // Optionally update state or trigger a fetch for updated data
         this.fetchData(resource); // Example: Trigger a fetch for updated data
+        return response
       } catch (error) {
         this.error = error.message;
       }
     },
 
-    async updateResource(resource, id, data) {
+    async updateResource(resource, data) {
       try {
-        const response = await axios.put(`/api/${resource}/${id}`, data);
+        const {response} = await axios.put(`http://localhost/leviva-backend/api/${resource}_api.php`, data);
         // Optionally update state or trigger a fetch for updated data
         this.fetchData(resource); // Example: Trigger a fetch for updated data
+        return response
       } catch (error) {
         this.error = error.message;
       }
     },
 
-    async deleteResource(resource, id) {
+    async deleteResource(resource) {
       try {
-        const response = await axios.delete(`/api/${resource}/${id}`);
+        const response = await axios.delete(`http://localhost/leviva-backend/api/${resource}_api.php`);
         // Optionally update state or trigger a fetch for updated data
         this.fetchData(resource); // Example: Trigger a fetch for updated data
       } catch (error) {
