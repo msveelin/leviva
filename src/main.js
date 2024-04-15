@@ -21,6 +21,24 @@ import * as directives from 'vuetify/directives'
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
+// toasts
+import Toast from "vue-toastification"
+import "vue-toastification/dist/index.css";
+
+const options = {
+  position: "top-right",
+  timeout: 2032,
+  closeOnClick: true,
+  pauseOnFocusLoss: true,
+  pauseOnHover: true,
+  draggable: true,
+  draggablePercent: 0.45,
+  showCloseButtonOnHover: false,
+  hideProgressBar: true,
+  closeButton: "button",
+  rtl: false
+}
+
 const vuetify = createVuetify({
   components,
   directives,
@@ -32,6 +50,7 @@ app.use(createPinia())
 app.use(router)
 app.use(VueSplide)
 app.use(vuetify)
+app.use(Toast, options)
 
 app.component('QuillEditor', QuillEditor)
 

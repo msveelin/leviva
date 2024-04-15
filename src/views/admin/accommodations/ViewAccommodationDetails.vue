@@ -10,10 +10,12 @@
                 <!-- {{ selectedItem }} -->
                 <h1 class="font-bold">{{selectedItem?.name}}</h1>
                 <h2 class="mt-2">{{selectedItem?.location}}</h2>
+
+                <p><b>Price Per Night:</b> USD$ {{selectedItem?.price_per_night}}/=</p>
                 <hr class="mt-3">
                 
                 <div class="py-2">
-                    <h3 class="font-semibold mb-1">Description:</h3>
+                    <h3 class="font-bold mb-1">Description:</h3>
                     <p v-html="selectedItem?.description"></p>
                 </div>
 

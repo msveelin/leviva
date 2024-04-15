@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-primary px-5 text-white flex flex-col lg:flex-row justify-between p-2 w-full">
+    <div class="bg-primary2 px-5 text-white flex flex-col lg:flex-row justify-between p-2 w-full">
         <div class="flex ">
             <div class="flex items-center mr-2">
                 <div class="mr-1">
@@ -114,7 +114,7 @@
                 </div>
                 <router-link to="about" class="mr-3 menu__link">About</router-link>
                 <router-link to="book-now"
-                    class="p-2 px-3 bg-primary text-white rounded-md hover:bg-black cursor-pointer">BOOK NOW</router-link>
+                    class="p-2 px-3 bg-primary2 text-white rounded-md hover:bg-black cursor-pointer">BOOK NOW</router-link>
             </div>
 
             <div v-if="isMenuOpen" class="lg:hidden  fixed top-20 left-0 w-full h-full bg-transparent z-10" @click="closeMenu">

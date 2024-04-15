@@ -13,6 +13,9 @@
     </div>
     <div class="p-3">
       <shared-table :columns="columns" :table-data="accommodations" :has-actions="true">
+        <template v-slot:price_per_night="{itemData}">
+          <p> USD$ {{ itemData?.price_per_night }}/= </p>
+        </template>
         <template v-slot:actions="{ itemData }">
           <!-- {{ itemData }} -->
           <span class="cursor-pointer text-green-400 mx-2 hover:font-bold"
@@ -20,7 +23,7 @@
           <span class="cursor-pointer text-blue-400 mx-2 hover:font-bold"
             @click="viewAccommodationDialog(itemData)">Edit</span>
             <span class="cursor-pointer text-red-400 mx-2 hover:font-bold"
-            @click="viewAccommodationDialog(itemData)">Delete</span>
+            @click="deleteData(itemData)">Delete</span>
         </template>
       </shared-table>
     </div>
@@ -48,7 +51,7 @@ const selectedData = ref(null)
 const viewAccommodationDialog = (value) => {
   if (openAddEditAccomodation.value === false) {
     openAddEditAccomodation.value = true;
-    if (value != null) {
+    if (value !== null) {
       selectedData.value = value;
     } else {
       // If value is null (indicating "Add" mode), clear selectedData
@@ -77,7 +80,7 @@ const viewAccommodationDetailsDialog = (value) => {
 
 const columns = ref({
   name: "Accommodation Name",
-  description: "Description",
+  // description: "Description",
   location: "Accomodation Location",
   price_per_night: "Price Per Night"
 })
@@ -98,12 +101,11 @@ const fetchData = async () => {
 const deleteData = async (value) => {
   try {
     // Call the fetchData action from the API store
-    await apiStore.fetchData('accomodations');
-    // Update the accommodations data with the fetched data
-    accommodations.value = apiStore.data.accomodations;
+    await apiStore.deleteResource('accomodations', "accomodationUniqueId", value?.accomodationUniqueId);
+
   } catch (error) {
     // Handle any errors
-    console.error('Error fetching accommodations:', error);
+    console.error('Error deleting accommodations:', error);
   }
 }
 

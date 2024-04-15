@@ -41,7 +41,8 @@
       console.error('Error fetching destinations:', error);
     }
   };
-  
+
+
   // Fetch data on component mount
   onMounted(() => {
     fetchData();

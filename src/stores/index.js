@@ -42,15 +42,16 @@ export const useApiStore = defineStore('api', {
       }
     },
 
-    async deleteResource(resource) {
+    async deleteResource(resource, idParameterName, id) {
       try {
-        const response = await axios.delete(`http://localhost/leviva-backend/api/${resource}_api.php`);
+        const response = await axios.delete(`http://localhost/leviva-backend/api/${resource}_api.php?${idParameterName}=${id}`);
         // Optionally update state or trigger a fetch for updated data
         this.fetchData(resource); // Example: Trigger a fetch for updated data
       } catch (error) {
         this.error = error.message;
       }
     },
+
 
     // Authentication
     async login(credentials) {
