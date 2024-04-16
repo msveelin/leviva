@@ -4,12 +4,24 @@
         <div class="intro">
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center text-center p-5 flex flex-col justify-center">
-                    <h1 class="lg:text-7xl text-4xl mb-2 drop-shadow-xl homemade">Safari dreams come true.</h1>
+                    <h1 class="lg:text-7xl text-4xl mb-2 drop-shadow-xl chelsea-market-regular">Safari dreams come true.</h1>
                 </div>
             </div>
         </div>
         <div class="p-10 bg-white text-black text-justify">
-            <h1 class="gloria text-3xl text-center mb-3">Unleash the Adventure: Discover Extraordinary Safaris</h1>
+          <h1 v-if="tour_packages?.length > 0" class="gloria mt-5 text-3xl text-center mb-3">Explore Our Safari Packages</h1>
+          <div class="p-10 grid mb-5 grid-cols-1 lg:grid-cols-4 gap-4 text-white">
+            <div v-for="tourPackage in tour_packages">
+              <div :style="{ 'background-image': `url(http://localhost/leviva-backend/api/uploads/${tourPackage?.image})` }" class="p-1 rounded-md card h-96 flex flex-col justify-end">
+                <div class="p-2 mt-1 w-full">
+                  <h1 class="text-xl font-bold mb-1">{{tourPackage?.name}}</h1>
+                  <button class="menu-btn w-full" @click="$router.push(`/package-details/${tourPackage?.tourPackageUniqueId}`)">VIEW MORE</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="gloria text-3xl text-center mb-3">Unleash the Adventure: Discover Extraordinary Safaris</h1>
             <div class="p-3">
                 <p>Welcome to the wild side of travel with Leviva's Safari Experiences. Immerse yourself in the heart of
                     nature, where every sunrise brings a new spectacle and every sunset paints the savannah in warm hues.
@@ -33,33 +45,6 @@
                 </div>
             </div>
 
-            <h1 class="gloria text-3xl text-center mt-3 mb-3">Explore Our Safari Packages</h1>
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 text-white">
-                <div class="p-1 rounded-md bg-black balloon h-96 flex flex-col justify-end">
-                    <div class="p-2 mt-1 w-full">
-                        <h1 class="text-xl font-bold mb-1">Balloon Safaris</h1>
-                        <button class="menu-btn w-full" @click="$router.push('/balloon-safaris')">VIEW MORE</button>
-                    </div>
-                </div>
-                <div class="p-1 rounded-md bg-black serengeti h-96 flex flex-col justify-end">
-                    <div class="p-2  mt-1">
-                        <h1 class="text-xl font-bold mb-1">Day Safaris</h1>
-                        <button class="menu-btn w-full  " @click="$router.push('/day-safaris')">VIEW MORE</button>
-                    </div>
-                </div>
-                <div class="p-1 rounded-md bg-black ngorongoro h-96 flex flex-col justify-end">
-                    <div class="p-2  mt-1">
-                        <h1 class="text-xl font-bold mb-1">2 Days of Wonders In Nothern Tanzania</h1>
-                        <button class="menu-btn w-full  " @click="$router.push('/two-day-wonders')"><span>VIEW MORE</span></button>
-                    </div>
-                </div>
-                <div class="p-1 rounded-md bg-black arusha h-96 flex flex-col justify-end">
-                    <div class="p-2  mt-1">
-                        <h1 class="text-xl font-bold mb-1">3-day Safaris</h1>
-                        <button class="menu-btn w-full " @click="$router.push('/three-day-wonders')"><span>VIEW MORE</span></button>
-                    </div>
-                </div>
-            </div>
 
             <h1 class="gloria text-3xl text-center mt-7 mb-3">What to wear on a safari</h1>
             <div>
@@ -72,7 +57,7 @@
                     evenings. Dive into the wild with a splash by packing your swimwear for lodge pools or beachside
                     surprises. And of course, no adventure is complete without a buff or scarf to add that touch of glam.
                     Snap those safari moments with your camera and binoculars in tow, and always keep the mood light and
-                    breezy with casual and comfy campwear. Bugs, be gone – you're now the trendsetter of the savannah!
+                    breezy with casual and comfy camp-wear. Bugs, be gone – you're now the trendsetter of the savannah!
                     🦓🕶️✨
                 </p>
             </div>
@@ -85,6 +70,32 @@
 <script setup>
 import FooterBar from '@/components/shared/FooterBar.vue';
 import LandingNav from '@/components/shared/LandingNav.vue';
+import {useApiStore} from "@/stores/index.js";
+import {onMounted, ref} from "vue";
+
+const apiStore = useApiStore();
+const tour_packages = ref(null)
+
+// Function to fetch tour_packages data
+const fetchData = async () => {
+  try {
+    // Fetch data from the API store
+    await apiStore.fetchData('tour_packages');
+    // Get the fetched data
+    const fetchedData = apiStore.data.tour_packages;
+    // Decode JSON fields in the fetched data
+    tour_packages.value = fetchedData
+
+  } catch (error) {
+    // Handle any errors
+    console.error('Error fetching tour packages: ', error);
+  }
+};
+
+
+onMounted(() => {
+  fetchData()
+})
 </script>
 <style scoped>
 .intro {
@@ -99,41 +110,8 @@ import LandingNav from '@/components/shared/LandingNav.vue';
     height: 80vh;
 }
 
-.balloon {
-    background-image: url("../assets/images/balloon.jpg");
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust the alpha value (0.0 to 1.0) for transparency */
-    background-blend-mode: overlay;
-}
 
-.serengeti {
-    background-image: url("../assets/images/day-safaris.jpg");
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust the alpha value (0.0 to 1.0) for transparency */
-    background-blend-mode: overlay;
-}
-
-.ngorongoro {
-    background-image: url("../assets/images/two-day.jpg");
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust the alpha value (0.0 to 1.0) for transparency */
-    background-blend-mode: overlay;
-}
-
-.arusha {
-    background-image: url("../assets/images/three-day.jpg");
+.card {
     background-size: cover;
     object-fit: cover;
     background-position: center;

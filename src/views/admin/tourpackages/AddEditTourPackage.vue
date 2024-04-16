@@ -7,8 +7,8 @@
 
         <button @click="closeDialog()">Close</button>
       </div>
-      <div class="bg-white max-h-[60vh] overflow-y-auto rounded-b-md p-3">
-        <form @submit.prevent="submitForm()">
+      <div class="bg-white max-h-[80vh] overflow-y-auto rounded-b-md p-3">
+        <form @submit.prevent="submitForm()" enctype="multipart/form-data">
           <div class="flex flex-col my-2">
             <label class="mb-2">Package Name</label>
             <input type="text" name="name" v-model="formFields.name" class="w-full p-3 border rounded-md">
@@ -16,6 +16,10 @@
           <div class="flex flex-col my-2">
             <label class="mb-2">Tour Package Description</label>
             <QuillEditor theme="snow" toolbar="full" v-model:content="formFields.description" contentType="html" placeholder="Write anything here..."  />
+          </div>
+          <div class="flex flex-col my-2">
+            <label class="mb-2">Intro Image</label>
+            <input type="file" name="file" v-on:change="handleImageUpload($event)" accept="image/*" class="w-full p-3 border rounded-md">
           </div>
           <div class="flex flex-col my-2">
             <label class="mb-2">Tour Package Itinerary</label>
@@ -33,7 +37,7 @@
           </div>
           <div class="flex flex-col my-2">
             <label class="mb-2">No. of Days</label>
-            <input type="number" step="0.01" name="price_per_night" v-model="formFields.duration"
+            <input type="number" max="14" name="duration" v-model="formFields.duration"
                    class="w-full p-3 border rounded-md">
           </div>
           <div class="flex flex-col my-2">
@@ -57,6 +61,7 @@
 import {onMounted, ref, watch} from 'vue'
 import { useApiStore } from '@/stores/index';
 import {notifySuccess, notifyError} from "@/services/notificationService.js";
+import axios from "axios";
 
 const apiStore = useApiStore();
 const props = defineProps(['openDialog','selectedItem'])
@@ -65,11 +70,12 @@ const emits = defineEmits(['closeDialog'])
 const dialog = ref(false);
 const destination = ref(null)
 
+
 watch(() => props.openDialog, (value) => {
   dialog.value = value
 })
 
-
+const filePath = ref(null)
 
 const formFields = ref({
   name: null,
@@ -80,6 +86,7 @@ const formFields = ref({
   itinerary: null,
   price_inclusion: null,
   price_exclusion: null,
+  image: null
 })
 
 watch(() => props.selectedItem, (value) => {
@@ -108,11 +115,38 @@ const closeDialog = () => {
   emits('closeDialog')
 }
 
+let selectedImage = ref(null);
+
+const handleImageUpload = (event) => {
+  // Retrieve the selected image file
+  const file = event.target.files[0];
+  // Create a FormData object
+  const formData = new FormData();
+  formData.append('file', file); // Assuming 'file' is the name of the field in your server
+
+  // Send the file to the server using fetch or axios
+  axios.post('http://localhost/leviva-backend/api/image_upload.php', formData)
+      .then(response => {
+        // Handle response from the server if needed
+        notifySuccess("File Uploaded successfully.");
+        filePath.value = response.data?.new_file_name
+        console.log('File uploaded successfully:', response.data?.new_file_name);
+      })
+      .catch(error => {
+        // Handle error
+        console.error('Error uploading file:', error);
+        notifyError("Error uploading file.");
+      });
+};
+
+
 const submitForm = async () => {
+  console.log(formFields.value.image)
   if (props.selectedItem?.tourPackageUniqueId) {
     try {
       formFields.value = {
         ...formFields.value,
+        image: filePath.value,
         tourPackageUniqueId: props.selectedItem?.tourPackageUniqueId
       }
       const response = await apiStore.updateResource('tour_packages',  formFields.value);
@@ -123,8 +157,10 @@ const submitForm = async () => {
       // Optionally show an error message to the user
       await notifyError("Error updating tour package");
     }
-  } else {
+  }
+  else {
     try {
+      formFields.value.image = filePath.value
       const response = await apiStore.createResource('tour_packages', formFields.value);
       emits('closeDialog');
       await notifySuccess("Tour package created successfully")

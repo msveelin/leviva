@@ -2,7 +2,7 @@
   <v-dialog v-model="dialog" persistent width="80%">
     <div class="bg-white rounded-md max-h-[80vh] overflow-y-auto">
       <div class="bg-amber-400 rounded-t-md p-3 flex items-center justify-between text-white font-bold">
-        <h1>Tour Package Details</h1>
+        <h1>Destination Details</h1>
 
         <button @click="closeDialog()">Close</button>
       </div>
@@ -12,22 +12,12 @@
         <h2 class="mt-2">{{selectedItem?.destination}}</h2>
 
         <hr class="my-3">
-        <p><b>Duration:</b> {{selectedItem?.duration}} days</p>
+        <p><b>Location:</b> {{selectedItem?.location}}</p>
+
+
         <div class="py-2">
           <h3 class="font-bold mb-1">Description:</h3>
           <p v-html="selectedItem?.description"></p>
-        </div>
-        <div class="py-2">
-          <h3 class="font-bold mb-1">Prices:</h3>
-          <p v-html="selectedItem?.prices"></p>
-        </div>
-        <div class="py-2">
-          <h3 class="font-bold mb-1">Price Includes:</h3>
-          <p v-html="selectedItem?.price_inclusion"></p>
-        </div>
-        <div class="py-2">
-          <h3 class="font-bold mb-1">Price Excludes:</h3>
-          <p v-html="selectedItem?.price_exclusion"></p>
         </div>
         <div class="py-2">
           <h3 class="font-bold mb-1">Intro Image:</h3>

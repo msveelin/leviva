@@ -51,87 +51,20 @@ const router = createRouter({
       component: () => import('@/views/SafarisView.vue')
     },
     {
-      path: '/balloon-safaris',
-      name: 'balloon-safaris',
+      path: '/package-details/:uUid',
+      name: 'package',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/safaris/balloon/BalloonSafari.vue')
+      component: () => import('@/views/PackageView.vue')
     },
     {
-      path: '/arusha-day-safari',
-      name: 'arushadaysafari',
+      path: '/destination-details/:uUid',
+      name: 'destination',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/safaris/daysafaris/ArushaDaySafari.vue')
-    },
-    {
-      path: '/chemka-day-safari',
-      name: 'chemkadaysafari',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/safaris/daysafaris/ChemkaDaySafari.vue')
-    },
-    {
-      path: '/materuni-day-trip',
-      name: 'materunidaytrip',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/safaris/daysafaris/MateruniDayTrip.vue')
-    },
-    {
-      path: '/tarangire-day-safari',
-      name: 'tarangiredaysafari',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/safaris/daysafaris/TarangireDaySafari.vue')
-    },
-    {
-      path: '/day-safaris',
-      name: 'daysafaris',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/safaris/daysafaris/DaySafari.vue')
-    },
-    {
-      path:'/tarangire',
-      name: 'tarangire',
-      component: () => import('@/views/TarangireNationalPark.vue')
-    },
-    {
-      path:'/arusha',
-      name: 'arusha',
-      component: () => import('@/views/ArushaNationalPark.vue')
-    },
-    {
-      path:'/serengeti',
-      name: 'serengeti',
-      component: () => import('@/views/SerengetiNationalPark.vue')
-    },
-    {
-      path:'/ngorongoro',
-      name: 'ngorongoro',
-      component: () => import('@/views/NgorongoroConservationArea.vue')
-    },
-    {
-      path:'/ngorongoro-conservation-area',
-      name: 'ngorongoroconservation',
-      component: () => import('@/views/Ngorongoro.vue')
-    },
-    {
-      path:'/two-day-wonders',
-      name: 'twodaywonders',
-      component: () => import('@/views/safaris/two-day-safaris/TwoDayWonders.vue')
-    },
-    {
-      path:'/three-day-wonders',
-      name: 'threedaywonders',
-      component: () => import('@/views/safaris/three-day-safaris/ThreeDay.vue')
+      component: () => import('@/views/DestinationView.vue')
     },
     ...adminRouter
   ]

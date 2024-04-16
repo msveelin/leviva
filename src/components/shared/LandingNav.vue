@@ -66,8 +66,8 @@
 
             <!-- Regular menu for large screens -->
             <div class="hidden lg:flex items-center">
-                <router-link to="flights" class="mr-3 menu__link">Flights</router-link>
-                <router-link to="safaris" id="dropdownHoverButton" data-dropdown-toggle="dropdownHover"
+                <router-link to="/flights" class="mr-3 menu__link">Flights</router-link>
+                <router-link to="/safaris" id="dropdownHoverButton" data-dropdown-toggle="dropdownHover"
                     data-dropdown-trigger="hover" class="mr-3 menu__link">Safaris</router-link>
                 <!-- Dropdown menu -->
                 <div id="dropdownHover"
@@ -84,46 +84,29 @@
                             </ul>
                         </li>
                         <li class="px-4 grid grid-cols-3 gap-6 w-3/4">
-                            <router-link to="tarangire-day-safari" class="">
-                                <div class="tarangire rounded-md h-44 flex flex-col justify-end">
+                            <router-link v-for="tourPackage in tour_packages" :to="`/package-details/${tourPackage?.tourPackageUniqueId}`" class="">
+                                <div :style="{ 'background-image': `url(http://localhost/leviva-backend/api/uploads/${tourPackage?.image})` }" class="tarangire rounded-md h-44 flex flex-col justify-end">
                                     <div class="mt-3 p-2 font-bold text-white">
-                                        <h3 class="text-xl">Tarangire Day Safari</h3>
-                                        <p class="font-semibold">From: US $405 pp</p>
+                                        <h3 class="text-xl">{{tourPackage?.name}}</h3>
                                     </div>
                                 </div>
 
                             </router-link>
-                            <router-link to="arusha-day-safari" class="">
-                                <div class="arusha rounded-md h-44 flex flex-col justify-end">
-                                    <div class="mt-3 p-2 font-bold text-white">
-                                        <h3 class="text-xl">Arusha Day Safari</h3>
-                                        <p class="font-semibold">From: US $148 pp</p>
-                                    </div>
-                                </div>
-                            </router-link>
-                            <router-link to="materuni-day-trip" class="">
-                                <div class="materuni rounded-md h-44 flex flex-col justify-end">
-                                    <div class="mt-3 p-2 font-bold text-white">
-                                        <h3 class="text-xl">Materuni Day Trip</h3>
-                                        <p class="font-semibold">From: US $98 pp</p>
-                                    </div>
-                                </div>
-                            </router-link>
                         </li>
                     </ul>
                 </div>
-                <router-link to="about" class="mr-3 menu__link">About</router-link>
-                <router-link to="book-now"
+                <router-link to="/about" class="mr-3 menu__link">About</router-link>
+                <router-link to="/book-now"
                     class="p-2 px-3 bg-primary2 text-white rounded-md hover:bg-black cursor-pointer">BOOK NOW</router-link>
             </div>
 
             <div v-if="isMenuOpen" class="lg:hidden  fixed top-20 left-0 w-full h-full bg-transparent z-10" @click="closeMenu">
                 <div class="flex flex-col p-5 mt-24 relative bg-primary rounded-md">
-                    <router-link to="flights" class="mb-4 text-black" @click="closeMenu">Flights</router-link>
-                    <router-link to="safaris" class="mb-4 text-black" @click="closeMenu">Safaris</router-link>
+                    <router-link to="/flights" class="mb-4 text-black" @click="closeMenu">Flights</router-link>
+                    <router-link to="/safaris" class="mb-4 text-black" @click="closeMenu">Safaris</router-link>
 
-                    <router-link to="about" class="mb-4 text-black" @click="closeMenu">About</router-link>
-                    <router-link to="book-now"
+                    <router-link to="/about" class="mb-4 text-black" @click="closeMenu">About</router-link>
+                    <router-link to="/book-now"
                         class="p-2 px-3 bg-black text-white rounded-md hover:bg-white hover:text-black cursor-pointer"
                         @click="closeMenu">BOOK NOW</router-link>
                 </div>
@@ -139,9 +122,13 @@ import logo from "@/assets/logo.svg";
 import { initFlowbite } from 'flowbite';
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import {useApiStore} from "@/stores/index.js";
 
 const isMenuOpen = ref(false);
 const router = useRouter();
+
+const apiStore = useApiStore();
+const tour_packages = ref(null)
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
@@ -151,8 +138,25 @@ const closeMenu = () => {
     isMenuOpen.value = false;
 };
 
+// Function to fetch tour_packages data
+const fetchData = async () => {
+  try {
+    // Fetch data from the API store
+    await apiStore.fetchData('tour_packages');
+    // Get the fetched data
+    const fetchedData = apiStore.data.tour_packages;
+    // Decode JSON fields in the fetched data
+    tour_packages.value = fetchedData.splice(0,3)
+
+  } catch (error) {
+    // Handle any errors
+    console.error('Error fetching tour packages: ', error);
+  }
+};
+
 onMounted(() => {
     initFlowbite();
+    fetchData()
 })
 </script>
 <style scoped>
@@ -180,7 +184,7 @@ onMounted(() => {
 }
 
 .tarangire {
-    background-image: url("@/assets/images/tarangire.jpg");
+
     background-size: cover;
     object-fit: cover;
     background-position: center;
@@ -190,25 +194,4 @@ onMounted(() => {
     background-blend-mode: overlay;
 }
 
-.materuni {
-    background-image: url("@/assets/images/materuni-card.jpg");
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust the alpha value (0.0 to 1.0) for transparency */
-    background-blend-mode: overlay;
-}
-
-.arusha {
-    background-image: url("@/assets/images/IMG_5703.jpg");
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust the alpha value (0.0 to 1.0) for transparency */
-    background-blend-mode: overlay;
-}
 </style>

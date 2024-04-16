@@ -10,8 +10,8 @@
       </div>
       <div class="p-3 overflow-x-auto">
         <SharedTable :tableData="tour_packages" :columns="columns" :has-actions="true">
-          <template v-slot:description="{itemData}">
-            <p v-html="itemData?.description"></p>
+          <template v-slot:duration="{itemData}">
+            <p>{{itemData?.duration}} day(s)</p>
           </template>
             <template v-slot:price="{itemData}">
                <p>USD$ {{ itemData?.price }} /=</p>
@@ -49,7 +49,6 @@
   // Define columns for the shared table
   const columns = ref({
     name: "Package Name",
-    description: "Package Description",
     duration: "Duration",
   });
 

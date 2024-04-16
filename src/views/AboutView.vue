@@ -4,7 +4,7 @@
     <main class="intro bg-black text-white">
       <div class="h-96 flex justify-center items-center">
         <div class="items-center flex p-5 text-center flex-col justify-center">
-          <h1 class="lg:text-7xl mb-2 text-4xl drop-shadow-xl homemade">
+          <h1 class="lg:text-7xl mb-2 text-4xl drop-shadow-xl chelsea-market-regular">
             Where the sunsets are golden
           </h1>
         </div>

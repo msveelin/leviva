@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- {{ tableData }} -->
-        <table class="border w-full">
+        <table v-if="tableData?.length > 0" class="border w-full">
             <thead>
                 <tr>
                     <th class="border text-left p-1 bg-amber-400 text-white">S/N</th>
@@ -25,6 +25,9 @@
                 </tr>
             </tbody>
         </table>
+      <div class="text-center p-5 bg-slate-50 rounded-md shadow" v-else>
+        <p>No Items Available </p>
+      </div>
     </div>
 </template>
 <script setup>

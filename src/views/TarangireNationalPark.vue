@@ -4,7 +4,7 @@
         <div class="intro">
             <div class="intro-main flex justify-center items-center">
                 <div class="items-center flex flex-col p-10 justify-center">
-                    <h1 class="text-7xl text-center mb-2 drop-shadow-xl chelsea-market-regular"> Tarangire National Park
+                    <h1 class="text-7xl text-white text-center mb-2 drop-shadow-xl chelsea-market-regular"> Tarangire National Park
                     </h1>
                 </div>
             </div>

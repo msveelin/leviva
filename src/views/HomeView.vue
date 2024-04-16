@@ -11,76 +11,12 @@
       <div class="flex items-center justify-center">
         <div class=" p-5 mt-5 w-full md:w-3/4 grid grid-cols-2 md:grid-cols-4 gap-6">
 
-          <div class="h-72 flex flex-col cursor-pointer justify-between bg-amber-300 serengeti shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
+          <div v-for="destination in destinations" :style="{ 'background-image': `url(http://localhost/leviva-backend/api/uploads/${destination?.image})` }" class="h-72 flex flex-col cursor-pointer justify-between bg-amber-300 serengeti shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
             <div>
-              <h1 class="fjalla-one-regular text-xl">Serengeti National Park</h1>
-              <p>"Where the wilderness whispers and the lion roars."</p>
+              <h1 class="fjalla-one-regular text-xl">{{destination?.name}}</h1>
             </div>
             <div class="w-full">
-              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
-            </div>
-          </div>
-          <div class="h-72 flex flex-col cursor-pointer justify-between bg-amber-300 tarangire shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
-            <div>
-              <h1 class="fjalla-one-regular text-xl">Tarangire National Park</h1>
-              <p>"Amongst the baobabs, the pulse of Africa beats strong."</p>
-            </div>
-            <div class="w-full">
-              <button @click="$router.push('/tarangire')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
-            </div>
-          </div>
-          <div class="h-72 flex flex-col cursor-pointer justify-between bg-amber-300 ngorongoro shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
-            <div>
-              <h1 class="fjalla-one-regular text-xl">Ngorongoro Conservation Area</h1>
-              <p>"Where ancient volcanoes cradle a world of wonders."</p>
-            </div>
-            <div class="w-full">
-              <button @click="$router.push('/ngorongoro-conservation-area')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
-            </div>
-          </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer kili shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
-            <div>
-              <h1 class="fjalla-one-regular text-xl">Mount. Kilimanjaro</h1>
-              <p>Climb the tallest peak and touch the sky.</p>
-            </div>
-            <div class="w-full">
-              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
-            </div>
-          </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer lake-manyara shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
-            <div>
-              <h1 class="fjalla-one-regular text-xl">Lake Manyara National Park</h1>
-              <p>In the shadow of the Rift Valley, a jewel awaits discovery.</p>
-            </div>
-            <div class="w-full">
-              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
-            </div>
-          </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer arusha shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
-            <div>
-              <h1 class="fjalla-one-regular text-xl">Arusha National Park</h1>
-              <p>Where the golden grasses sway, adventure awaits at every turn</p>
-            </div>
-            <div class="w-full">
-              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
-            </div>
-          </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer selous shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
-            <div>
-              <h1 class="fjalla-one-regular text-xl">Stone Town</h1>
-              <p>Where ancient history whispers through labyrinthine streets</p>
-            </div>
-            <div class="w-full">
-              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
-            </div>
-          </div>
-          <div class="h-72 flex flex-col justify-between bg-amber-300 cursor-pointer mikumi shadow-md rounded-md hover:scale-105 hover:ease-in-out p-6 text-white">
-            <div>
-              <h1 class="fjalla-one-regular text-xl">Unguja, Zanzibar</h1>
-              <p>Where azure waters embrace shores kissed by the warmth of Swahili culture</p>
-            </div>
-            <div class="w-full">
-              <button @click="$router.push('/serengeti')" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
+              <button @click="$router.push(`/destination-details/${destination?.destinationUniqueId}`)" class="bg-white w-full text-amber-400 rounded-md font-semibold p-2 hover:bg-amber-400 hover:text-white">Read More</button>
             </div>
           </div>
         </div>
@@ -106,35 +42,11 @@
       <div class="flex flex-col items-center justify-center">
         
         <div class="mt-4 w-3/4 grid text-white grid-cols-1 lg:grid-cols-4 gap-4">
-
-        <div class="rounded-md cursor-pointer h-72 shadow-md relative overflow-hidden">
-          <img src="../assets/images/two-day.jpg" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125 ease-in-out">
-          <div class="p-2 mt-1 overlaying w-full absolute bottom-0">
-              <h1 class="text-xl font-bold mb-1">Tarangire National Park Day Trip</h1>
-              <button class="menu-btn w-full" @click="$router.push('/tarangire-day-safari')">VIEW MORE</button>
-          </div>
-        </div>
-        
-                       
-          <div class="rounded-md cursor-pointer h-72 shadow-md relative overflow-hidden">
-            <img src="../assets/images/serengeti.jpg" alt="" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125">
-            <div class="p-2 mt-1 overlaying absolute bottom-0">
-              <h1 class="text-xl font-bold mb-1">Two Day Wonders in Nothern Tanzania</h1>
-              <button class="menu-btn w-full  " @click="$router.push('/two-day-wonders')">VIEW MORE</button>
-            </div>
-          </div>
-          <div class="rounded-md cursor-pointer h-72 shadow-md relative overflow-hidden">
-            <img src="../assets/images/ngorongoro.jpg" alt="" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125">
-            <div class="p-2 mt-1 overlaying absolute bottom-0">
-              <h1 class="text-xl font-bold mb-1">Ngorongoro Day Trip</h1>
-              <button class="menu-btn w-full" @click="$router.push('/ngorongoro')">VIEW MORE</button>
-            </div>
-          </div>
-          <div class="rounded-md cursor-pointer h-72 shadow-md relative overflow-hidden">
-            <img src="../assets/images/arusha.jpg" alt="" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125">
-            <div class="p-2 mt-1 overlaying absolute bottom-0">
-              <h1 class="text-xl font-bold mb-1">Arusha National Park Day Trip</h1>
-              <button class="menu-btn w-full " @click="$router.push('/arusha-day-safari')"> VIEW MORE</button>
+          <div v-for="tourPackage in tour_packages" class="rounded-md w-full cursor-pointer h-72 shadow-md relative overflow-hidden">
+            <img :src="`http://localhost/leviva-backend/api/uploads/${tourPackage?.image}`" class="absolute rounded-md top-0 object-cover left-0 h-72 w-full hover:transition-transform hover:duration-300 hover:transform hover:scale-125 ease-in-out">
+            <div class="p-2 mt-1 overlaying w-full absolute bottom-0">
+              <h1 class="text-xl font-bold mb-1">{{tourPackage?.name}}</h1>
+              <button class="menu-btn w-full" @click="$router.push(`/package-details/${tourPackage?.tourPackageUniqueId}`)">VIEW MORE</button>
             </div>
           </div>
         </div>
@@ -221,6 +133,48 @@ import destination from '@/assets/destination.svg';
 import FooterBar from '@/components/shared/FooterBar.vue';
 import LandingNav from '@/components/shared/LandingNav.vue';
 import CarouselSlider from "@/components/shared/CarouselSlider.vue";
+
+import {useApiStore} from "@/stores/index.js";
+import {onMounted, ref} from "vue";
+
+const apiStore = useApiStore();
+const tour_packages = ref()
+
+const destinations = ref(null)
+
+// Function to fetch destinations data
+const fetchDestinationData = async () => {
+  try {
+    // Call the fetchData action from the API store
+    await apiStore.fetchData('destination');
+    // Update the destinations data with the fetched data
+    let fetchedData = apiStore.data?.destination;
+    destinations.value = fetchedData.splice(0,8);
+  } catch (error) {
+    // Handle any errors
+    console.error('Error fetching destinations:', error);
+  }
+};
+
+// Function to fetch tour_packages data
+const fetchData = async () => {
+  try {
+    // Fetch data from the API store
+    await apiStore.fetchData('tour_packages');
+    // Get the fetched data
+    const fetchedData = apiStore.data?.tour_packages;
+    // Decode JSON fields in the fetched data
+    tour_packages.value = fetchedData.slice(0,4)
+  } catch (error) {
+    // Handle any errors
+    console.error('Error fetching tour packages: ', error);
+  }
+};
+
+onMounted(() => {
+  fetchData()
+  fetchDestinationData()
+})
 </script>
 
 <style scoped>
@@ -292,7 +246,6 @@ import CarouselSlider from "@/components/shared/CarouselSlider.vue";
 }
 
 .serengeti {
-  background-image: url("../assets/images/serengeti.jpg");
   background-size: cover;
   object-fit: cover;
   background-position: center;

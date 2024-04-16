@@ -9,6 +9,26 @@ export const useApiStore = defineStore('api', {
   }),
 
   actions: {
+    async fetchItem(resource, idParameterName, id){
+      if(idParameterName){
+        try {
+          const response = await axios.get(`http://localhost/leviva-backend/api/${resource}_api.php?${idParameterName}=${id}`);
+          this.data[resource] = response?.data; // Set the fetched data into the store
+          return this.data[resource]
+        } catch (error) {
+          this.error = error.message;
+        }
+      }
+      else{
+        try {
+          const response = await axios.get(`http://localhost/leviva-backend/api/${resource}_api.php`);
+          this.data[resource] = response?.data; // Set the fetched data into the store
+          return this.data[resource]
+        } catch (error) {
+          this.error = error.message;
+        }
+      }
+    },
     async fetchData(resource) {
       try {
         const response = await axios.get(`http://localhost/leviva-backend/api/${resource}_api.php`);
@@ -60,7 +80,7 @@ export const useApiStore = defineStore('api', {
     },
 
     async logout() {
-      // Make HTTP request to logout user
+      // Make HTTP request to log out user
       // Update this.user and clear any stored session data
     },
 

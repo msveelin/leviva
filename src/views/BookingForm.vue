@@ -6,7 +6,7 @@
             </div>
             <div class="intro-main pt-10 flex justify-center items-center">
                 <div class="items-center flex flex-col justify-center">
-                    <h1 class="text-6xl mb-2 homemade drop-shadow-xl">Book a Trip / Flight</h1>
+                    <h1 class="text-6xl mb-2 chelsea-market-regular drop-shadow-xl">Book a Trip</h1>
 
                 </div>
             </div>
@@ -26,10 +26,7 @@
                 <label for="tour">Select Safari Tour:</label>
                 <select class="p-2 bg-gray-50 text-black rounded-xl mt-2 outline-none" id="tour" name="destination"
                     v-model="formData.destination" required>
-                    <option value="Arusha National Park Day Safari">Arusha National Park Day Safari</option>
-                    <option value="Tarangire National Park Dy Safari">Tarangire National Park Dy Safari</option>
-                    <option value="Chemka Hot Spring Day Safari">Chemka Hot Spring Day Safari</option>
-                    <option value="Balloon Safari">Balloon Safari</option>
+                   <option v-for="destination in destinations" :key="destination.id" :value="destination.name">{{ destination.name }}</option>
                 </select>
                 <br>
                 <label for="participants">Number of Participants:</label>
@@ -40,7 +37,7 @@
                 <input type="date" class="shadow-sm bg-gray-50" v-model="formData.date" id="date" name="date" required>
 
 
-                <button class="bg-orange-400 text-white hover:bg-black mt-3 rounded-md p-2" type="submit">Book Now</button>
+                <button class="bg-amber-500 text-white hover:bg-black mt-3 rounded-md p-2" type="submit">Book Now</button>
             </form>
         </div>
         <div>
@@ -52,12 +49,15 @@
 import FooterBar from '@/components/shared/FooterBar.vue';
 import LandingNav from '@/components/shared/LandingNav.vue';
 import emailjs from '@emailjs/browser';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import {useApiStore} from "@/stores/index.js";
 import { useRouter } from 'vue-router';
 
 const router = useRouter()
 
 emailjs.init('6sG6eYDndzcj1QsJP')
+const apiStore = useApiStore()
+const destinations = ref(null)
 
 const formData = ref({
     name: '',
@@ -66,6 +66,22 @@ const formData = ref({
     participants: null,
     date: ''
 })
+
+// Function to fetch destinations data
+const fetchData = async () => {
+  try {
+    // Fetch data from the API store
+    await apiStore.fetchData('tour_packages');
+    // Get the fetched data
+    const fetchedData = apiStore.data.tour_packages;
+    // Decode JSON fields in the fetched data
+    destinations.value = fetchedData
+
+  } catch (error) {
+    // Handle any errors
+    console.error('Error fetching tour packages: ', error);
+  }
+};
 
 const submitForm = async () => {
     try {
@@ -98,6 +114,11 @@ const submitForm = async () => {
     }
 
 }
+
+
+onMounted(() => {
+   fetchData()
+})
 </script>
 <style scoped>
 .intro {

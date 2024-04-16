@@ -1,6 +1,6 @@
 <template>
     <v-dialog v-model="dialog" persistent width="750px">
-        <div class="bg-white rounded-md">
+        <div class="bg-white rounded-md max-h-[80vh] overflow-y-auto">
             <div class="bg-amber-400 rounded-t-md p-3 flex items-center justify-between text-white font-bold">
                 <h1>Accommodation Details</h1>
 

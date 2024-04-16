@@ -37,6 +37,7 @@ import { ref, onMounted } from 'vue';
 import SharedTable from '@/components/shared/SharedTable.vue'
 import AddEditAccomodation from './AddEditAccomodation.vue'
 import ViewAccommodationDetails from './ViewAccommodationDetails.vue'
+import {notifyError, notifySuccess} from "@/services/notificationService.js";
 
 // Access the API store
 const apiStore = useApiStore();
@@ -81,7 +82,7 @@ const viewAccommodationDetailsDialog = (value) => {
 const columns = ref({
   name: "Accommodation Name",
   // description: "Description",
-  location: "Accomodation Location",
+  location: "Accommodation Location",
   price_per_night: "Price Per Night"
 })
 
@@ -102,10 +103,11 @@ const deleteData = async (value) => {
   try {
     // Call the fetchData action from the API store
     await apiStore.deleteResource('accomodations', "accomodationUniqueId", value?.accomodationUniqueId);
-
+    await notifySuccess("Accomodation deleted successfully")
   } catch (error) {
     // Handle any errors
     console.error('Error deleting accommodations:', error);
+    await notifyError("Error deleting accommodations");
   }
 }
 
