@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import adminRouter from '@/views/admin/adminRouter.js'
+import {StorageService} from "@/services/storageService.js";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -66,8 +67,27 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('@/views/DestinationView.vue')
     },
+
+    {
+      path: "/admin-portal-login",
+      name: "LogIn",
+      component: () => import('@/views/admin/PortalLogin.vue')
+    },
     ...adminRouter
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = new StorageService().getItem('access_token');
+
+  const exemptedRoutes = ['LogIn', 'home', 'destination','booknow', 'package', 'safaris','thankyou','flights','about'];
+  // Check if the user is not authenticated and the destination route is not the login page
+  if (!isAuthenticated && !exemptedRoutes.includes(to.name)) {
+    next({ name: "LogIn" }); // Redirect to login page
+  } else {
+    next(); // Allow navigation
+  }
+});
+
 
 export default router

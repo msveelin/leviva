@@ -51,7 +51,6 @@ const data = ref(null)
 
 const fetchStats = async  () => {
   const response = await apiStore.fetchItem("dashboard")
-  console.log(response)
   data.value = response
 }
 

@@ -130,7 +130,6 @@ const fetchDestinations = async () => {
 };
 
 onMounted(() => {
-  console.log(formFields.value.description)
   fetchDestinations()
 })
 </script>

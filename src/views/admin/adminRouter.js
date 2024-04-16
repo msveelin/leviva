@@ -11,6 +11,7 @@ export default [
         //   permissions: []
         // },
         children: [
+
           {
             path: "dashboard",
             name: "AdminDashboard",
@@ -30,7 +31,8 @@ export default [
             path: "accommodations",
             name: "Accommodations",
             component: () => import('@/views/admin/accommodations/AccommodationsList.vue')
-          }  
+          } ,
+
         ],
       }
 ]

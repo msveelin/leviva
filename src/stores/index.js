@@ -1,5 +1,8 @@
 import { defineStore } from 'pinia';
 import axios from 'axios'
+import {ca} from "vuetify/locale";
+import {StorageService} from "@/services/storageService.js";
+import {notifyError, notifySuccess} from "@/services/notificationService.js";
 
 export const useApiStore = defineStore('api', {
   state: () => ({
@@ -74,14 +77,66 @@ export const useApiStore = defineStore('api', {
 
 
     // Authentication
-    async login(credentials) {
-      // Make HTTP request to authenticate user
-      // Update this.user based on the response
-    },
+      async login(credentials) {
+          try {
+              const response = await axios.post(`http://localhost/leviva-backend/api/authentication_api.php`, credentials);
+              let storageService = new StorageService();
 
-    async logout() {
-      // Make HTTP request to log out user
-      // Update this.user and clear any stored session data
+              // If login is successful
+              if (response.status === 200) {
+                  storageService.setItem('access_token', response.data.access_token);
+                  storageService.setItem('refresh_token', response.data.refresh_token);
+                  storageService.setItem('expires_in', response.data.access_token_expires_in);
+
+                  let expireTime = new Date()
+                  expireTime.setSeconds(expireTime.getSeconds() + response.data.access_token_expires_in)
+                  storageService.setItem('expireTime', expireTime.getTime())
+
+                  this.data["user"] = response?.data.data;
+                  await notifySuccess("Successfully Logged In")
+                  window.location.href = "/admin-portal/dashboard";
+              } else {
+                  // If login is unsuccessful, display error message
+                  await notifyError(response.data.message || "An error occurred during login");
+              }
+              return response;
+          } catch (error) {
+              // If an error occurs during the HTTP request (e.g., network error), return the error response
+              console.error(error);
+              if (error.response) {
+                  // If the error has a response, return it
+                  await notifyError(error.response?.data.message);
+                  return error.response;
+              } else {
+                  // Otherwise, return a generic error message
+                  await notifyError("An error occurred during login");
+                  return null;
+              }
+          }
+      },
+
+      async logout() {
+      let data = {
+        logout: true
+      }
+      try {
+        const response = await axios.post(`http://localhost/leviva-backend/api/logout_api.php`)
+            .then( async (response) => {
+              let storageService = new StorageService()
+              // console.log(response.data.access_token)
+              storageService.removeItem('access_token');
+              storageService.removeItem('refresh_token');
+              storageService.removeItem('expires_in');
+
+              storageService.removeItem('expireTime')
+
+              await notifySuccess("Logged Out Successfully")
+              window.location.href = "/admin-portal-login"
+              return response
+            });
+      } catch (e){
+        console.error(e);
+      }
     },
 
     async register(userData) {
